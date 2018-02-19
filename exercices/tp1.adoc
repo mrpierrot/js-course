@@ -1,4 +1,6 @@
-= Avant tout
+= TP 1
+
+== Avant tout
 
 - Créez un nouveau Repl sur https://repl.it
 - nommez le "TP - cours 01"
@@ -6,13 +8,13 @@
 - Ecrivez le code de vos exercices, en gardant bien ce que vous avez déjà écrit pour les exercices précédents.
 
 
-= Exercice 1 : Concaténation
+== Exercice 1 : Concaténation
 
-Stocker dans des variables les valeurs suivantes : 
+Stockez dans des variables les valeurs suivantes : 
 
-- Votre nom (X)
-- Votre age (Y)
-- Votre activité préféré (Z)
+- Votre nom : X
+- Votre age : Y
+- Votre activité préféré : Z
 
 Puis complètez avec ces données la phrase suivante : 
 
@@ -20,7 +22,39 @@ Puis complètez avec ces données la phrase suivante :
 
 Vous afficherez la phrase obtenue dans la console.
 
-= Exercice : Créer un objet générique à l'aide d'une fonction.
+Note : Parce que vous êtes des gens biens, vous n'utiliserez pas X,Y et Z comme variables. 
+A la place, vous utiliserez des noms de variables plus à propos.
+Ce commentaire est valable pour les autres exercices.
+
+
+== Exercice 2 : Calcul de fou !
+
+Stockez dans des variables les valeurs suivantes :
+
+- Votre année de naissance
+- Une année future (Genre 2021) : X
+
+Puis vous afficherez dans la console la phrase suivante :
+
+"En X j'aurais entre Y et Z ans"
+
+Avec X et Y les deux ages possibles pour l'année. 
+Exemple : "En 2019, j'aurais entre 35 et 36 ans"
+
+== Exercice 3 : Un petit tour et puis s'en vont
+
+Ici, on va faire un petit peu de mathématique : en calculant la circonférence d'un cercle.
+
+La formule mathématique est : `2r x π` avec R le rayon du cercle.
+
+En JS, π est défini via cette valeur : `Math.PI`
+
+- Commencez par afficher dans la console la valeur de π
+- Puis créez une fonction qui prend en paramètre le rayon et qui retourne la circonférence.
+- En utilisant cette fonction, affichez dans la console la circonférence d'un cercle de rayon 256.
+
+
+== Exercice 4 : Et dieu créa la femme
 
 Créez une fonction "createPerson" avec comme paramètres 
 
@@ -38,7 +72,7 @@ Sous votre code, ajoutez celui-ci :
 [source,javascript]
 ----
     
- var valentine = createPerson("Valentine","carottes")
+ var valentine = createPerson("Valentine","carottes");
 
  console.log(person.name); // affiche Valentine
  console.log(person.aime("carottes")); // affiche true
@@ -47,3 +81,18 @@ Sous votre code, ajoutez celui-ci :
 ----
 
 Les console.log() doivent afficher les valeurs misent respectivement en commentaire
+
+== Exercice 5 : En condition
+
+- Ecrivez une fonction qui renvoient la valeur la plus grande entre deux valeurs.
+- A l'aide de cette fonction, affichez dans la console, la valeur la plus grande entre 42 et 418.
+
+== Exercice 6 : Un chat ou deux chats?
+
+- Ecrivez une fonction `plurialize` avec deux paramètres :
+  - un nom commun : X
+  - le nombre de X : Y
+
+Cette fonction retourne le nom au pluriel (en ajoutant un `s`) si Y est supérieur à 1
+
+- En utilisant `plurialize`, affichez dans la console la phrase : "Chez moi, j'ai Y X" avec Y valant 0, 1 et 2.
