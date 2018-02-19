@@ -1,0 +1,26 @@
+
+
+= Introduction à Javascript
+
+== Javascript c'est quoi? 
+
+Bla Bla
+
+== Environnement de travail
+
+=== Avant de commencer
+
+- Allez sur https://repl.it/
+- Créez un compte
+- Envoyez moi votre profil (ex: https://repl.it/@mrpierrot) sur pierre@casusludi.com
+
+== Une première ligne de code
+
+[source,javascript]
+----
+console.log("Bonjour le monde");
+----
+
+
+
+
