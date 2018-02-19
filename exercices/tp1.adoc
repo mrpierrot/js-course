@@ -1,0 +1,49 @@
+= Avant tout
+
+- Créez un nouveau Repl sur https://repl.it
+- nommez le "TP - cours 01"
+- Les exercices suivants devront être écrit dans ce Repl.
+- Ecrivez le code de vos exercices, en gardant bien ce que vous avez déjà écrit pour les exercices précédents.
+
+
+= Exercice 1 : Concaténation
+
+Stocker dans des variables les valeurs suivantes : 
+
+- Votre nom (X)
+- Votre age (Y)
+- Votre activité préféré (Z)
+
+Puis complètez avec ces données la phrase suivante : 
+
+"X, personne de Y ans est recherchée pour activité illégale de Z. Récompense : 50 000€"
+
+Vous afficherez la phrase obtenue dans la console.
+
+= Exercice : Créer un objet générique à l'aide d'une fonction.
+
+Créez une fonction "createPerson" avec comme paramètres 
+
+- name : le nom de la personne
+- alimentPrefere : son aliment préféré
+
+Cette fonction doit retourner un objet avec : 
+
+- un attribut "name"
+- une methode "aime" qui a un paramètre "aliments" et qui retourne vrai si cet aliments équivaut à alimentPrefere
+- une methode "mange" avec un paramètre "aliments" et qui retourne une chaine de caractères : name + " mange des " + aliments
+
+Sous votre code, ajoutez celui-ci :
+
+[source,javascript]
+----
+    
+ var valentine = createPerson("Valentine","carottes")
+
+ console.log(person.name); // affiche Valentine
+ console.log(person.aime("carottes")); // affiche true
+ console.log(person.mange("carottes")); // affiche Valentine mange des carottes
+
+----
+
+Les console.log() doivent afficher les valeurs misent respectivement en commentaire

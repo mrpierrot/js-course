@@ -2,24 +2,348 @@
 
 = Introduction à Javascript
 
-== Javascript c'est quoi? 
+== Javascript c'est quoi?
 
-Bla Bla
+- C'est un langage de programmation crée en 1995 par Netscape
+- Ce n'est pas du Java (Mais alors pas du tout!)
+- Nom réduit : JS
 
-== Environnement de travail
+[NOTE.speaker]
+--
+- Createur : Brendan Eich : 1er version codé en 10jours
+- La comparaison avec Java est marketing (à cause d'un partenaria avec Sun System)
+--
 
-=== Avant de commencer
+== Javascript ça sert à quoi? 
+
+=== A plein de choses
+
+- Historiquement, il est le principal langage des navigateurs : il va dynamiser les sites web.
+- Avec NodeJS, il est présent coté serveur, et permet un tas de choses. 
+- Javascript est partout (ou presque)
+
+[NOTE.speaker]
+--
+- Il y eu d'autres concurrents (Comme VBScript de Microsoft)
+- Robotique/Serveur/Embarqué
+--
+
+== Avant de commencer
 
 - Allez sur https://repl.it/
 - Créez un compte
 - Envoyez moi votre profil (ex: https://repl.it/@mrpierrot) sur pierre@casusludi.com
 
-== Une première ligne de code
+== Une premiere ligne de code.
+
+Afficher dans la console ton nom et prénom : 
 
 [source,javascript]
 ----
-console.log("Bonjour le monde");
+ console.log("Pierre Chabiland");
 ----
+
+== Ecrire un commentaire
+
+Il y a deux formes pour écrires des commentaires :
+
+[source,javascript]
+----
+ // Ceci n'est jamais executé
+ /*
+    ça non plus
+ */
+----
+
+== Un peu de théorique
+
+== Les variables
+
+[source,javascript]
+----
+ var person = "Pierre Chabiland";
+----
+
+- Pas d'accentuation
+- Ne peux commencer par un chiffre
+- Ne peux contenir d'espaces ou de ponctuations
+
+=== Les Variables - Exemple
+
+[source,javascript]
+----
+ var person = "Pierre Chabiland";
+ console.log(person); // affiche "Pierre Chabiland"
+----
+
+=== Les types de données primitifs
+
+=== Les chaines de caractéres (String en anglais)
+
+Type de donnée pouvant contenir du texte et le manipuler. Comme vu dans l'exemple précédent
+
+[source,javascript]
+----
+ var questCeQuOnMangeCesoir  = "Des patates!!!";
+----
+
+=== Concaténation de chaines.
+
+[quote, Wikipedia]
+____
+Le terme concaténation (substantif féminin), du latin cum (« avec ») et catena (« chaîne, liaison »), désigne l'action de mettre bout à bout au moins deux chaînes de caractères. 
+____
+
+En JS, une concaténation se fait avec l'operateur *+*
+
+[source,javascript]
+----
+ var questCeQuOnMangeCesoir  = "Des patates" + " et " +"des carottes";
+ console.log(questCeQuOnMangeCesoir); // affiche "Des patates et des carottes"
+----
+
+=== Les nombres (Number en anglais)
+
+Type de donnée pouvant contenir des nombres et les manipuler.
+
+[source,javascript]
+----
+ var nombreDePatates = 42;
+ console.log(nombreDePatates); //affiche 42
+----
+
+=== Operations basiques avec les nombres
+
+Multiplication / Division / Addition / Soustraire
+
+[source,javascript]
+----
+ var a = 2 * 2;
+ var b = 4 / 2;
+ var c = 1 + 1;
+ var d = 2 - 4;
+ console.log(a,b,c,d); // affiche 4, 2, 2, -2
+----
+
+=== Les booléen (Boolean en anglais)
+
+[source,javascript]
+----
+ var regisEstUnCon = true;
+ var estEntrainDeMarcher = false;
+ console.log(regisEstUnCon) // affiche true
+ console.log(estEntrainDeMarcher) // affiche false
+----
+
+== Les comparaisons
+
+Une comparaison est une expression qui renvoit un booléen.
+On va comparer, de préférence, deux données d'un même type. 
+
+
+=== Comparaison _égalité_ avec des nombres
+
+[source,javascript]
+----
+ console.log( 2 == 4 ); // renvoie false
+ console.log( 2 == 2 ); // renvoie true
+----
+
+=== Comparaison _différence_ avec des nombres
+
+[source,javascript]
+----
+ console.log( 2 != 4 ); // renvoie true
+ console.log( 2 != 2 ); // renvoie false
+----
+
+=== Comparaison _strictement superieur_ avec des nombres
+
+[source,javascript]
+----
+ console.log( 2 > 4 ); // renvoie false
+ console.log( 2 > 2 ); // renvoie false
+----
+
+=== Comparaison _superieur ou égale_ avec des nombres
+
+[source,javascript]
+----
+ console.log( 2 >= 4 ); // renvoie false
+ console.log( 2 >= 2 ); // renvoie true
+----
+
+=== Comparaison _strictement inferieur_ avec des nombres
+
+[source,javascript]
+----
+ console.log( 2 < 4 ); // renvoie true
+ console.log( 2 < 2 ); // renvoie false
+----
+
+=== Comparaison _inferieur ou égale_ avec des nombres
+
+[source,javascript]
+----
+ console.log( 2 <= 4 ); // renvoie false
+ console.log( 2 <= 2 ); // renvoie true
+----
+
+=== Comparaison de chaine de caractères
+
+[source,javascript]
+----
+ console.log( "pouet" == "pouet" ); // renvoie true
+ console.log( "pouet" == "lol" ); // renvoie false
+ console.log( "pouet" != "pouet" ); // renvoie false
+ console.log( "pouet" != "lol" ); // renvoie true
+----
+
+== Les fonctions
+
+Permet de factoriser du code. C'est à dire : écrire un morceau de code une fois dans un espace dédié, il est amené à se repeter.
+
+[source,javascript]
+----
+ function pouet(){
+    console.log("pouet");
+ }
+
+ pouet(); // affiche "pouet";
+----
+
+=== Fonction avec un paramètre
+
+[source,javascript]
+----
+ function write(msg){
+    console.log(msg);
+ }
+
+ write("pouet"); // affiche "pouet"
+----
+
+=== Fonction avec plusieurs paramètres
+
+[source,javascript]
+----
+ function writeMsg(msg,to,from){
+    console.log(to + " écrit '" + msg + "' à " + from);
+ }
+
+ writeMsg("pouet","Pierre","Valentine"); 
+ // affiche "Pierre écrit 'pouet' à Valentine"
+----
+
+=== Fonction retournant une valeur
+
+[source,javascript]
+----
+ function add(a,b){
+    return a + b;
+ }
+
+ console.log(add(4,8)) // affiche 12
+----
+
+== Les objets
+
+Un objet est une structure de données permettant rassembler un ensemble d'informations.
+Un objet peut avoir des attributs (Sorte de variables) et des methodes (sortes de fonctions)
+
+=== Un object avec un attribut
+
+[source,javascript]
+----
+    
+ var person = {
+    name:"Valentine"     // Ceci est un attribut d'object
+ }
+
+ console.log(person.name); // affiche Valentine
+
+----
+
+=== Un object avec plusieurs attributs
+
+deux attributs sont séparés par une virgule.
+
+[source,javascript]
+----
+    
+ var person = {
+    name:"Valentine",     // Ceci est un attribut d'object
+    age: 29
+ }
+
+ console.log(person.name); // affiche Valentine
+ console.log(person.age); // affiche 29
+
+----
+
+=== Un object avec une methode
+
+
+[source,javascript]
+----
+    
+ var valentine = {
+    name:"Valentine",     // Ceci est un attribut d'object
+    aime(aliments){
+        // si aliment vaut "carottes" 
+        // alors ça retourne "vrai"
+        // Oui Valentine n'aime que les carottes!!!
+        return aliment == "carottes"; 
+    }
+ }
+ console.log(person.aime("frites")); // affiche false
+
+----
+
+=== l'instruction *this*
+
+Dans une méthode d'object, le mot clef this permet de faire référence à une autre méthode ou à un attribut de ce même objet.
+
+[source,javascript]
+----
+    
+ var valentine = {
+    name:"Valentine",     // Ceci est un attribut d'object
+    mange(aliments){
+        // ici this.name fait référence à "Valentine"
+        return this.name+ " mange des "+ aliments
+    }
+ }
+
+ console.log(person.mange("carottes")); 
+ // affiche "Valentine des carottes"
+
+----
+
+=== this est dangereux
+
+Attention à l'utilisation de _this_, parfois ce dernier peut vous jouer des tours. Mais nous y reviendrons plus tard
+
+
+== Les instructions conditionelles
+
+Si Valentine aime les frites, alors elle peut en manger sinon elle mangera des carottes
+
+[source,javascript]
+----
+ if( valentine.aime("frites") ){
+    console.log(valentine.mange("frites"));
+ }else{
+    console.log(valentine.mange("carottes"));
+ }
+
+ // alors ça retourne quoi?
+----
+
+== TP
+
+
+
 
 
 

@@ -2,9 +2,105 @@
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = window.location.search.match( /print-pdf/gi ) ? "../../reveal.js/css/print/pdf.css" : "../../reveal.js/css/print/paper.css";
-document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="../../reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Introduction à Javascript</h1></section><section id="javascript_c_est_quoi"><h2>Javascript c&#8217;est quoi?</h2><div class="paragraph"><p>Bla Bla</p></div></section>
-<section><section id="environnement_de_travail"><h2>Environnement de travail</h2></section><section id="avant_de_commencer"><h2>Avant de commencer</h2><div class="ulist"><ul><li><p>Allez sur <a href="https://repl.it/" class="bare">https://repl.it/</a></p></li><li><p>Créez un compte</p></li><li><p>Envoyez moi votre profil (ex: <a href="https://repl.it/@mrpierrot" class="bare">https://repl.it/@mrpierrot</a>) sur <a href="mailto:pierre@casusludi.com">pierre@casusludi.com</a></p></li></ul></div></section></section>
-<section id="une_premire_ligne_de_code"><h2>Une première ligne de code</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript">console.log("Bonjour le monde");</code></pre></div></div></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="../../reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Introduction à Javascript</h1></section><section id="javascript_c_est_quoi"><h2>Javascript c&#8217;est quoi?</h2><div class="ulist"><ul><li><p>C&#8217;est un langage de programmation crée en 1995 par Netscape</p></li><li><p>Ce n&#8217;est pas du Java (Mais alors pas du tout!)</p></li><li><p>Nom réduit : JS</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Createur : Brendan Eich : 1er version codé en 10jours</p></li><li><p>La comparaison avec Java est marketing (à cause d&#8217;un partenaria avec Sun System)</p></li></ul></div></aside></section>
+<section><section id="javascript_a_sert__quoi"><h2>Javascript ça sert à quoi?</h2></section><section id="a_plein_de_choses"><h2>A plein de choses</h2><div class="ulist"><ul><li><p>Historiquement, il est le principal langage des navigateurs : il va dynamiser les sites web.</p></li><li><p>Avec NodeJS, il est présent coté serveur, et permet un tas de choses.</p></li><li><p>Javascript est partout (ou presque)</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Il y eu d&#8217;autres concurrents (Comme VBScript de Microsoft)</p></li><li><p>Robotique/Serveur/Embarqué</p></li></ul></div></aside></section></section>
+<section id="avant_de_commencer"><h2>Avant de commencer</h2><div class="ulist"><ul><li><p>Allez sur <a href="https://repl.it/" class="bare">https://repl.it/</a></p></li><li><p>Créez un compte</p></li><li><p>Envoyez moi votre profil (ex: <a href="https://repl.it/@mrpierrot" class="bare">https://repl.it/@mrpierrot</a>) sur <a href="mailto:pierre@casusludi.com">pierre@casusludi.com</a></p></li></ul></div></section>
+<section id="une_premiere_ligne_de_code"><h2>Une premiere ligne de code.</h2><div class="paragraph"><p>Afficher dans la console ton nom et prénom :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log("Pierre Chabiland");</code></pre></div></div></section>
+<section id="ecrire_un_commentaire"><h2>Ecrire un commentaire</h2><div class="paragraph"><p>Il y a deux formes pour écrires des commentaires :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> // Ceci n'est jamais executé
+ /*
+    ça non plus
+ */</code></pre></div></div></section>
+<section id="un_peu_de_thorique"><h2>Un peu de théorique</h2></section>
+<section><section id="les_variables"><h2>Les variables</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var person = "Pierre Chabiland";</code></pre></div></div><div class="ulist"><ul><li><p>Pas d&#8217;accentuation</p></li><li><p>Ne peux commencer par un chiffre</p></li><li><p>Ne peux contenir d&#8217;espaces ou de ponctuations</p></li></ul></div></section><section id="les_variables_exemple"><h2>Les Variables - Exemple</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var person = "Pierre Chabiland";
+ console.log(person); // affiche "Pierre Chabiland"</code></pre></div></div></section><section id="les_types_de_donnes_primitifs"><h2>Les types de données primitifs</h2></section><section id="les_chaines_de_caractres_string_en_anglais"><h2>Les chaines de caractéres (String en anglais)</h2><div class="paragraph"><p>Type de donnée pouvant contenir du texte et le manipuler. Comme vu dans l&#8217;exemple précédent</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var questCeQuOnMangeCesoir  = "Des patates!!!";</code></pre></div></div></section><section id="concatnation_de_chaines"><h2>Concaténation de chaines.</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Le terme concaténation (substantif féminin), du latin cum (« avec ») et catena (« chaîne, liaison »), désigne l&#8217;action de mettre bout à bout au moins deux chaînes de caractères.</p></div></blockquote><div class="attribution">&#8212; Wikipedia</div></div>
+<div class="paragraph"><p>En JS, une concaténation se fait avec l&#8217;operateur <strong>+</strong></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var questCeQuOnMangeCesoir  = "Des patates" + " et " +"des carottes";
+ console.log(questCeQuOnMangeCesoir); // affiche "Des patates et des carottes"</code></pre></div></div></section><section id="les_nombres_number_en_anglais"><h2>Les nombres (Number en anglais)</h2><div class="paragraph"><p>Type de donnée pouvant contenir des nombres et les manipuler.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var nombreDePatates = 42;
+ console.log(nombreDePatates); //affiche 42</code></pre></div></div></section><section id="operations_basiques_avec_les_nombres"><h2>Operations basiques avec les nombres</h2><div class="paragraph"><p>Multiplication / Division / Addition / Soustraire</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var a = 2 * 2;
+ var b = 4 / 2;
+ var c = 1 + 1;
+ var d = 2 - 4;
+ console.log(a,b,c,d); // affiche 4, 2, 2, -2</code></pre></div></div></section><section id="les_boolen_boolean_en_anglais"><h2>Les booléen (Boolean en anglais)</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var regisEstUnCon = true;
+ var estEntrainDeMarcher = false;
+ console.log(regisEstUnCon) // affiche true
+ console.log(estEntrainDeMarcher) // affiche false</code></pre></div></div></section></section>
+<section><section id="les_comparaisons"><h2>Les comparaisons</h2><div class="paragraph"><p>Une comparaison est une expression qui renvoit un booléen.
+On va comparer, de préférence, deux données d&#8217;un même type.</p></div></section><section id="comparaison_em_galit_em_avec_des_nombres"><h2>Comparaison <em>égalité</em> avec des nombres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( 2 == 4 ); // renvoie false
+ console.log( 2 == 2 ); // renvoie true</code></pre></div></div></section><section id="comparaison_em_diffrence_em_avec_des_nombres"><h2>Comparaison <em>différence</em> avec des nombres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( 2 != 4 ); // renvoie true
+ console.log( 2 != 2 ); // renvoie false</code></pre></div></div></section><section id="comparaison_em_strictement_superieur_em_avec_des_nombres"><h2>Comparaison <em>strictement superieur</em> avec des nombres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( 2 &gt; 4 ); // renvoie false
+ console.log( 2 &gt; 2 ); // renvoie false</code></pre></div></div></section><section id="comparaison_em_superieur_ou_gale_em_avec_des_nombres"><h2>Comparaison <em>superieur ou égale</em> avec des nombres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( 2 &gt;= 4 ); // renvoie false
+ console.log( 2 &gt;= 2 ); // renvoie true</code></pre></div></div></section><section id="comparaison_em_strictement_inferieur_em_avec_des_nombres"><h2>Comparaison <em>strictement inferieur</em> avec des nombres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( 2 &lt; 4 ); // renvoie true
+ console.log( 2 &lt; 2 ); // renvoie false</code></pre></div></div></section><section id="comparaison_em_inferieur_ou_gale_em_avec_des_nombres"><h2>Comparaison <em>inferieur ou égale</em> avec des nombres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( 2 &lt;= 4 ); // renvoie false
+ console.log( 2 &lt;= 2 ); // renvoie true</code></pre></div></div></section><section id="comparaison_de_chaine_de_caractres"><h2>Comparaison de chaine de caractères</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> console.log( "pouet" == "pouet" ); // renvoie true
+ console.log( "pouet" == "lol" ); // renvoie false
+ console.log( "pouet" != "pouet" ); // renvoie false
+ console.log( "pouet" != "lol" ); // renvoie true</code></pre></div></div></section></section>
+<section><section id="les_fonctions"><h2>Les fonctions</h2><div class="paragraph"><p>Permet de factoriser du code. C&#8217;est à dire : écrire un morceau de code une fois dans un espace dédié, il est amené à se repeter.</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> function pouet(){
+    console.log("pouet");
+ }
+
+ pouet(); // affiche "pouet";</code></pre></div></div></section><section id="fonction_avec_un_paramtre"><h2>Fonction avec un paramètre</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> function write(msg){
+    console.log(msg);
+ }
+
+ write("pouet"); // affiche "pouet"</code></pre></div></div></section><section id="fonction_avec_plusieurs_paramtres"><h2>Fonction avec plusieurs paramètres</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> function writeMsg(msg,to,from){
+    console.log(to + " écrit '" + msg + "' à " + from);
+ }
+
+ writeMsg("pouet","Pierre","Valentine");
+ // affiche "Pierre écrit 'pouet' à Valentine"</code></pre></div></div></section><section id="fonction_retournant_une_valeur"><h2>Fonction retournant une valeur</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> function add(a,b){
+    return a + b;
+ }
+
+ console.log(add(4,8)) // affiche 12</code></pre></div></div></section></section>
+<section><section id="les_objets"><h2>Les objets</h2><div class="paragraph"><p>Un objet est une structure de données permettant rassembler un ensemble d&#8217;informations.
+Un objet peut avoir des attributs (Sorte de variables) et des methodes (sortes de fonctions)</p></div></section><section id="un_object_avec_un_attribut"><h2>Un object avec un attribut</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var person = {
+    name:"Valentine"     // Ceci est un attribut d'object
+ }
+
+ console.log(person.name); // affiche Valentine</code></pre></div></div></section><section id="un_object_avec_plusieurs_attributs"><h2>Un object avec plusieurs attributs</h2><div class="paragraph"><p>deux attributs sont séparés par une virgule.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var person = {
+    name:"Valentine",     // Ceci est un attribut d'object
+    age: 29
+ }
+
+ console.log(person.name); // affiche Valentine
+ console.log(person.age); // affiche 29</code></pre></div></div></section><section id="un_object_avec_une_methode"><h2>Un object avec une methode</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var valentine = {
+    name:"Valentine",     // Ceci est un attribut d'object
+    aime(aliments){
+        // si aliment vaut "carottes"
+        // alors ça retourne "vrai"
+        // Oui Valentine n'aime que les carottes!!!
+        return aliment == "carottes";
+    }
+ }
+ console.log(person.aime("frites")); // affiche false</code></pre></div></div></section><section id="l_instruction_strong_this_strong"><h2>l&#8217;instruction <strong>this</strong></h2><div class="paragraph"><p>Dans une méthode d&#8217;object, le mot clef this permet de faire référence à une autre méthode ou à un attribut de ce même objet.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> var valentine = {
+    name:"Valentine",     // Ceci est un attribut d'object
+    mange(aliments){
+        // ici this.name fait référence à "Valentine"
+        return this.name+ " mange des "+ aliments
+    }
+ }
+
+ console.log(person.mange("carottes"));
+ // affiche "Valentine des carottes"</code></pre></div></div></section><section id="this_est_dangereux"><h2>this est dangereux</h2><div class="paragraph"><p>Attention à l&#8217;utilisation de <em>this</em>, parfois ce dernier peut vous jouer des tours. Mais nous y reviendrons plus tard</p></div></section></section>
+<section id="les_instructions_conditionelles"><h2>Les instructions conditionelles</h2><div class="paragraph"><p>Si Valentine aime les frites, alors elle peut en manger sinon elle mangera des carottes</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="javascript language-javascript"> if( valentine.aime("frites") ){
+    console.log(valentine.mange("frites"));
+ }else{
+    console.log(valentine.mange("carottes"));
+ }
+
+ // alors ça retourne quoi?</code></pre></div></div></section>
+<section id="tp"><h2>TP</h2></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,
