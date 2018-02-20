@@ -95,7 +95,7 @@ ____
 Le terme concaténation (substantif féminin), du latin cum (« avec ») et catena (« chaîne, liaison »), désigne l'action de mettre bout à bout au moins deux chaînes de caractères. 
 ____
 
-En JS, une concaténation se fait avec l'operateur *+*
+En JS, une concaténation se fait avec l'operateur `+`
 
 [source,javascript]
 ----
@@ -115,7 +115,7 @@ Type de donnée pouvant contenir des nombres et les manipuler.
 
 === Operations basiques avec les nombres
 
-Multiplication / Division / Addition / Soustraire
+Multiplication / Division / Addition / Soustraction
 
 [source,javascript]
 ----
@@ -290,14 +290,14 @@ deux attributs sont séparés par une virgule.
     
  var valentine = {
     name:"Valentine",     // Ceci est un attribut d'object
-    aime(aliments){
+    aime(aliment){
         // si aliment vaut "carottes" 
         // alors ça retourne "vrai"
         // Oui Valentine n'aime que les carottes!!!
         return aliment == "carottes"; 
     }
  }
- console.log(person.aime("frites")); // affiche false
+ console.log(valentine.aime("frites")); // affiche false
 
 ----
 

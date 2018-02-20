@@ -18,11 +18,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if 
 <section><section id="les_variables"><h2>Les variables</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var person = "Pierre Chabiland";</code></pre></div></div><div class="ulist"><ul><li><p>Pas d&#8217;accentuation</p></li><li><p>Ne peux commencer par un chiffre</p></li><li><p>Ne peux contenir d&#8217;espaces ou de ponctuations</p></li></ul></div></section><section id="les_variables_exemple"><h2>Les Variables - Exemple</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var person = "Pierre Chabiland";
  console.log(person); // affiche "Pierre Chabiland"</code></pre></div></div></section><section id="les_types_de_donnes_primitifs"><h2>Les types de données primitifs</h2></section><section id="les_chaines_de_caractres_string_en_anglais"><h2>Les chaines de caractéres (String en anglais)</h2><div class="paragraph"><p>Type de donnée pouvant contenir du texte et le manipuler. Comme vu dans l&#8217;exemple précédent</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var questCeQuOnMangeCesoir  = "Des patates!!!";</code></pre></div></div></section><section id="concatnation_de_chaines"><h2>Concaténation de chaines.</h2><div class="quoteblock"><blockquote><div class="paragraph"><p>Le terme concaténation (substantif féminin), du latin cum (« avec ») et catena (« chaîne, liaison »), désigne l&#8217;action de mettre bout à bout au moins deux chaînes de caractères.</p></div></blockquote><div class="attribution">&#8212; Wikipedia</div></div>
-<div class="paragraph"><p>En JS, une concaténation se fait avec l&#8217;operateur <strong>+</strong></p></div>
+<div class="paragraph"><p>En JS, une concaténation se fait avec l&#8217;operateur <code>+</code></p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var questCeQuOnMangeCesoir  = "Des patates" + " et " +"des carottes";
  console.log(questCeQuOnMangeCesoir); // affiche "Des patates et des carottes"</code></pre></div></div></section><section id="les_nombres_number_en_anglais"><h2>Les nombres (Number en anglais)</h2><div class="paragraph"><p>Type de donnée pouvant contenir des nombres et les manipuler.</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var nombreDePatates = 42;
- console.log(nombreDePatates); //affiche 42</code></pre></div></div></section><section id="operations_basiques_avec_les_nombres"><h2>Operations basiques avec les nombres</h2><div class="paragraph"><p>Multiplication / Division / Addition / Soustraire</p></div>
+ console.log(nombreDePatates); //affiche 42</code></pre></div></div></section><section id="operations_basiques_avec_les_nombres"><h2>Operations basiques avec les nombres</h2><div class="paragraph"><p>Multiplication / Division / Addition / Soustraction</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var a = 2 * 2;
  var b = 4 / 2;
  var c = 1 + 1;
@@ -74,14 +74,14 @@ Un objet peut avoir des attributs (Sorte de variables) et des methodes (sortes d
  console.log(person.name); // affiche Valentine
  console.log(person.age); // affiche 29</code></pre></div></div></section><section id="un_object_avec_une_methode"><h2>Un object avec une methode</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var valentine = {
     name:"Valentine",     // Ceci est un attribut d'object
-    aime(aliments){
+    aime(aliment){
         // si aliment vaut "carottes"
         // alors ça retourne "vrai"
         // Oui Valentine n'aime que les carottes!!!
         return aliment == "carottes";
     }
  }
- console.log(person.aime("frites")); // affiche false</code></pre></div></div></section><section id="l_instruction_strong_this_strong"><h2>l&#8217;instruction <strong>this</strong></h2><div class="paragraph"><p>Dans une méthode d&#8217;object, le mot clef this permet de faire référence à une autre méthode ou à un attribut de ce même objet.</p></div>
+ console.log(valentine.aime("frites")); // affiche false</code></pre></div></div></section><section id="l_instruction_strong_this_strong"><h2>l&#8217;instruction <strong>this</strong></h2><div class="paragraph"><p>Dans une méthode d&#8217;object, le mot clef this permet de faire référence à une autre méthode ou à un attribut de ce même objet.</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var valentine = {
     name:"Valentine",     // Ceci est un attribut d'object
     mange(aliments){
