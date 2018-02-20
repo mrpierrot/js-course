@@ -1,6 +1,7 @@
 
 
 = Introduction à Javascript
+:source-highlighter: highlightjs
 
 == Javascript c'est quoi?
 
