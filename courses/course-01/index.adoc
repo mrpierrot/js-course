@@ -342,6 +342,7 @@ Si Valentine aime les frites, alors elle peut en manger sinon elle mangera des c
 
 == TP
 
+- Allez sur https://mrpierrot.github.io/js-course/
 
 
 
