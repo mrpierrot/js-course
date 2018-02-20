@@ -316,7 +316,7 @@ Dans une méthode d'object, le mot clef this permet de faire référence à une 
     }
  }
 
- console.log(person.mange("carottes")); 
+ console.log(valentine.mange("carottes")); 
  // affiche "Valentine des carottes"
 
 ----
