@@ -11,8 +11,8 @@
 
 [NOTE.speaker]
 --
-- Createur : Brendan Eich : 1er version codé en 10jours
-- La comparaison avec Java est marketing (à cause d'un partenaria avec Sun System)
+- Createur : Brendan Eich : 1er version codée en 10jours
+- La comparaison avec Java est marketing (à cause d'un partenariat avec Sun System)
 --
 
 == Javascript ça sert à quoi? 
