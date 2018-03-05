@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>Introduction à Javascript - Cours 2</title>
+<title>TODO :</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -427,198 +427,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Introduction à Javascript - Cours 2</h1>
+<h1>TODO :</h1>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_ce_que_je_n_ai_pas_précisé_au_premier_cours">Ce que je n&#8217;ai pas précisé au premier cours</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="">!</h3>
-<div class="paragraph">
-<p>On peut assigner le contenu de variable à d&#8217;autres variables. On peut éffectuer des opérations entre variables</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript"> var a = 1;
- var b = 3;
- var c = a;
- var d = a + b;
- var e = "valeur de a = "+a;
- console.log(a,b,c,d);
- console.log(e);</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2">!</h3>
-<div class="paragraph">
-<p>Le retour d&#8217;une fonction (return) peut-être le contenu d&#8217;une variable, d&#8217;un object</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">function add(a,b){
-     var ret = a + b;
-     return a;
- }
-
- // équivaut à
-
- function add(a,b){
-     return a + b;
- }</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3">!</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">function createObject(){
-    return {
-         name:"Valentine"
-    };
-}
-
-// équivaut à
-
-function createObject(){
-    var result = {
-        name:"Valentine"
-    }
-    return result;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_4">!</h3>
-<div class="paragraph">
-<p>On peut assigner à l&#8217;attribut d&#8217;un objet le contenu d&#8217;une variable</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">var aName = "Florent";
-
-var person = {
-    name:aName
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_5">!</h3>
-<div class="paragraph">
-<p>Ça marche aussi avec les fonctions</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">function createObject(aName){
-    return {
-        name:aName
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_les_tableaux">Les tableaux</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Un tableau est un objet permettant de contenir une liste de donnée.</p>
+<p>boucle <strong>for in</strong> et object</p>
 </li>
 <li>
-<p>A chaque donnée ajouté au tableau va être assigné un index.</p>
+<p>boucles imbriquées</p>
 </li>
 <li>
-<p>Le premier est 0. Et ça augmente de 1 pour chaque nouvel élément.</p>
+<p>fonctions anonymes</p>
+</li>
+<li>
+<p>Array.map, Array.reduce, Array.forEach</p>
+</li>
+<li>
+<p>Déclaration String ``et '' (template + \n)</p>
+</li>
+<li>
+<p>*= et /=
+-</p>
 </li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="_exemple">Exemple</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">0</th>
-<th class="tableblock halign-left valign-top">1</th>
-<th class="tableblock halign-left valign-top">2</th>
-<th class="tableblock halign-left valign-top">3</th>
-<th class="tableblock halign-left valign-top">4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Pouet"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{title:"Plop"}</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Un tableau peut contenir tout types de données</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_déclarer_un_tableau">Déclarer un tableau</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// création d'un tableau avec deux chaines de caractères "Apple" et "Banana"
-var fruits = ["Apple", "Banana"];
-
-// affichage du nombre d'élements contenu dans le tableau
-// ici : 2
-console.log(fruits.length);</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_récupérer_les_elements_d_un_tableau">Récupérer les elements d&#8217;un tableau</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// Assignation dans la variable *first* du premier élement du tableau
-// ici : "Apple"
-var first = fruits[0];
-
-// Assignation dans la variable *last* du dernier élement du tableau
-// ici : "Banana"
-var last = fruits[fruits.length - 1];
-
-// équivaut ici à
-var second = fruits[1];
-// second vaut aussi "Banana"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_les_boucles">Les boucles</h2>
-<div class="sectionbody">
-
-</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-03-05 11:55:00 CET
+Last updated 2018-03-05 16:45:49 CET
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>

@@ -43,7 +43,43 @@ var person = {
         name:aName
     }
 }</code></pre></div></div></section></section>
-<section><section id="les_tableaux"><h2>Les tableaux</h2><div class="ulist"><ul><li><p>Un tableau est un objet permettant de contenir une liste de donnée.</p></li><li><p>A chaque donnée ajouté au tableau va être assigné un index.</p></li><li><p>Le premier est 0. Et ça augmente de 1 pour chaque nouvel élément.</p></li></ul></div></section><section id="exemple"><h2>Exemple</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup><thead><tr><th class="tableblock halign-left valign-top">0</th><th class="tableblock halign-left valign-top">1</th><th class="tableblock halign-left valign-top">2</th><th class="tableblock halign-left valign-top">3</th><th class="tableblock halign-left valign-top">4</th></tr><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">"Pouet"</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">{title:"Plop"}</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td></tr></table>
+<section><section id="jouer_avec_les_variables"><h2>Jouer avec les variables</h2></section><section id="changer_la_valeur_d_une_variable"><h2>Changer la valeur d&#8217;une variable</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var a = 1;
+var b = 2;
+console.log(a);
+// affiche 1
+
+a = b;
+console.log(a);
+// affiche 2</code></pre></div></div></section><section id="augmenter_la_valeur_d_une_variable"><h2>Augmenter la valeur d&#8217;une variable</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var a = 0;
+console.log(a); // affiche 0
+
+a = a + 1;
+console.log(a); // affiche 1
+
+a = a + 5;
+console.log(a); // affiche 6</code></pre></div></div></section><section id="reduire_la_valeur_d_une_variable"><h2>Reduire la valeur d&#8217;une variable</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var a = 10;
+console.log(a); // affiche 10
+
+a = a - 1;
+console.log(a); // affiche 9
+
+a = a - 5;
+console.log(a); // affiche 4</code></pre></div></div></section><section id="raccourci_pour_ajouter_1__une_valeur"><h2>Raccourci pour ajouter 1 à une valeur</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var a = 0;
+console.log(a); // affiche 0
+
+a = a++;
+console.log(a); // affiche 1
+
+a = a++;
+console.log(a); // affiche 2</code></pre></div></div></section><section id="raccourci_pour_enlever_1__une_valeur"><h2>Raccourci pour enlever 1 à une valeur</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var a = 0;
+console.log(a); // affiche 0
+
+a = a--;
+console.log(a); // affiche -1
+
+a = a--;
+console.log(a); // affiche -2</code></pre></div></div></section></section>
+<section><section id="les_tableaux"><h2>Les tableaux</h2><div class="ulist"><ul><li><p>Un tableau est un objet permettant de contenir une liste de donnée.</p></li><li><p>A chaque donnée ajouté au tableau va être assigné un index.</p></li><li><p>Le premier est 0. Et ça augmente de 1 pour chaque nouvel élément.</p></li><li><p>En anglais, on appel ça un <strong>Array</strong></p></li></ul></div></section><section id="exemple"><h2>Exemple</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup><thead><tr><th class="tableblock halign-left valign-top">0</th><th class="tableblock halign-left valign-top">1</th><th class="tableblock halign-left valign-top">2</th><th class="tableblock halign-left valign-top">3</th><th class="tableblock halign-left valign-top">4</th></tr><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">"Pouet"</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">{title:"Plop"}</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td></tr></table>
 <div class="paragraph"><p>Un tableau peut contenir tout types de données</p></div></section><section id="dclarer_un_tableau"><h2>Déclarer un tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">// création d'un tableau avec deux chaines de caractères "Apple" et "Banana"
 var fruits = ["Apple", "Banana"];
 
@@ -59,8 +95,64 @@ var last = fruits[fruits.length - 1];
 
 // équivaut ici à
 var second = fruits[1];
-// second vaut aussi "Banana"</code></pre></div></div></section></section>
-<section id="les_boucles"><h2>Les boucles</h2></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+// second vaut aussi "Banana"</code></pre></div></div></section><section id="ajouter_un_lement__un_tableau"><h2>Ajouter un élement à un tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var fruits = []; // Ceci est un tableau vide
+console.log(fruits); // affiche un tableau vide
+
+fruits.push("Apple"); // ajoute "Apple" au tableau
+
+console.log(fruits) // affiche ["Apple"]</code></pre></div></div></section><section id="changer_la_valeur_d_un_element_du_tableau"><h2>Changer la valeur d&#8217;un element du tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var fruits = ["Apple","Banana"];
+
+fruits[1] = "Ananas";
+
+console.log(fruits); // affiche ["Apple","Ananas"]</code></pre></div></div></section></section>
+<section><section id="les_boucles"><h2>Les boucles</h2><div class="paragraph"><p>Une boucle est une instruction permettant de repeter un action une nombre de fois défini.</p></div></section><section id="la_boucle_while"><h2>La boucle While</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    while(&lt;condition&gt;){
+        // mettre ici des intructions à executer
+    }</code></pre></div></div>
+<div class="paragraph"><p>&lt;condition&gt; est une expression retournant un booléen (true ou false)</p></div>
+<div class="paragraph"><p>La boucle "While" permet de repeter les instructions entre {} tant que la &lt;condition&gt; est vrai.
+Si &lt;condition&gt; devient fausse, alors la suite du programme est exécuté normalement.</p></div></section><section id="exemple_de_boucle_while"><h2>Exemple de boucle While</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var i = 0;
+    var c = 10;
+
+    // Tant que i est strictement inférieur à 10 alors on boucle
+    while(i &lt; c){
+        // on affiche la valeur de i
+        console.log(i);
+
+        i++; // ajoute 1 à i
+        // équivaut à i = i+1;
+    }</code></pre></div></div>
+<div class="paragraph"><p>Cette exemple affiche les nombres de 0 à 9 dans la console.</p></div></section><section id="boucle_infini"><h2>Boucle infini</h2><div class="paragraph"><p>Attention au boucle infini : si la condition de la boucle ne passe jamais à faux.</p></div>
+<div class="paragraph"><p>Nous nous trouvons dans le cas d&#8217;une boucle infini qui va geler votre programme.
+Et ça c&#8217;est pas cool!</p></div></section><section id="boucle_for"><h2>Boucle For</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">for(&lt;initialisation&gt;;&lt;condition&gt;;&lt;final_expression&gt;){
+    // mettre ici des intructions à executer
+}</code></pre></div></div>
+<div class="ulist"><ul><li><p><strong>&lt;initialisation&gt;</strong> : code executer avant que la boucle commence</p></li><li><p><strong>&lt;condition&gt;</strong> : expression booléenne vérifiant si l&#8217;on continue à boucler ou non</p></li><li><p><strong>&lt;final_expression</strong> : expression executé en fin d&#8217;itération de boucle</p></li></ul></div></section><section id="exemple_de_boucle_for"><h2>Exemple de boucle For</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">// Au depart i vaut 0.
+// On vérifie a chaque itération de boucle
+// si i est strictement inférieur à 10.
+// À la fin de l'itération, on ajoute 1 à i
+for(var i = 0; i &lt; 10; i++){
+    console.log(i);
+    // affiche i dans la console
+}</code></pre></div></div>
+<div class="paragraph"><p>Ce code affiche les valeurs de 0 à 9 dans la console.</p></div>
+<div class="paragraph"><p>Exactement comme pour l&#8217;exemple de la boucle <strong>while</strong></p></div></section></section>
+<section><section id="boucle_et_tableau"><h2>Boucle et Tableau</h2></section><section id="boucle_strong_while_strong_et_tableau"><h2>Boucle <strong>while</strong> et Tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var persons = ["Léa","Florent","Bastien","Rebecca"];
+
+var i = 0;
+var size = persons.length;
+while(i &lt; size){
+    console.log(persons[i]);
+}</code></pre></div></div>
+<div class="paragraph"><p>Cette exemple va afficher la liste des personnes contenues dans le tableau <strong>persons</strong></p></div></section><section id="boucle_strong_for_strong_et_tableau"><h2>Boucle <strong>for</strong> et Tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var persons = ["Léa","Florent","Bastien","Rebecca"];
+
+for(var i=0, size = persons.length;i &lt; size;i++){
+    console.log(persons[i]);
+}</code></pre></div></div>
+<div class="paragraph"><p>Cette exemple va aussi afficher la liste des personnes contenues dans le tableau <strong>persons</strong>.</p></div>
+<div class="paragraph"><p>Vous noterez ceci :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var i=0, size = persons.length</code></pre></div></div>
+<div class="paragraph"><p>La virgule permet de déclarer deux variables sur une seule et même ligne.</p></div></section></section>
+<section id="tp"><h2>TP</h2><div class="ulist"><ul><li><p>Allez sur <a href="https://mrpierrot.github.io/js-course/" class="bare">https://mrpierrot.github.io/js-course/</a></p></li></ul></div></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,

@@ -14,7 +14,7 @@ chokidar.watch('courses/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event
         case 'add':
         case 'change':
             asciidoctor.convertFile(npath, slidesOptions);
-            var nFileName = path.basename(npath, path.extname(npath)) + '.full.html';
+            var nFileName = path.basename(npath, path.extname(npath)) + '.page.html';
             var output = path.join(path.dirname(npath), nFileName);
 
             asciidoctor.convertFile(npath, Object.assign({to_file:output},pageOptions));

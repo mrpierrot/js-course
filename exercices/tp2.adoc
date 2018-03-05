@@ -1,0 +1,107 @@
+= TP2
+:source-highlighter: highlightjs
+
+== Exercice 1
+
+Soit les variables : 
+
+- a de valeur "zouave"
+- b de valeur "saligot"
+
+Affichez dans la console les valeurs de **a** et **b**.
+
+Echangez les valeurs contenus dans les variables **a** et **b**.
+(**a** doit valoir "saligot" et b doit valoir "zouave")
+
+Affichez de nouveau dans la console les valeurs de **a** et **b**.
+
+
+== Exercice 2
+
+Créez un tableau **movies** contenant les chaines de caractères suivants : 
+
+- Alien
+- Aliens
+- Alien 3
+- Alien Resurection
+- Prometheus
+- Alien : Covenant
+
+A l'aide d'une boucle **while**, affichez dans la console chaque élement de **movies** dans le format suivant :
+
+----
+ Movie <nom_du_film>
+----
+
+Ou **<nom_du_film>** est un element du tableau **movies**
+
+Exemple : 
+
+----
+    Movie Alien
+    Movie Aliens
+    ...
+    Movie Alien : Covenant
+----
+
+== Exercice 3
+
+A l'aide d'une boucle **while** afficher dans l'ordre inverse le contenu du tableau **movies** de l'exercice précédent.
+
+[NOTE]
+--
+- Le premier élement afficher est "Alien : Covenant" et le dernier "Alien"
+- Le tableau est exactement le même que l'exercice précédent. C'est la boucle qui va changer l'ordre d'affichage
+--
+
+== Exercice 4
+
+Même exercice que l'exercice 2 mais avec une boucle **for**
+
+== Exercice 5
+
+Même exercice que l'exercice 3 mais avec une boucle **for**
+
+== Exercice 6
+
+Créez deux tableaux :
+
+- **movies** tel que défini dans l'exercice 2
+- **dates**, avec les valeurs suivantes : 1979, 1986,1992, 1997, 2012, 2017
+
+A l'aide d'une boucle, affichez dans la console chaque film avec sa date de sortie au format suivant :
+
+----
+ Movie <nom_du_film> (<date>)
+----
+
+Exemple :
+
+----
+    Movie Alien (1979)
+    Movie Aliens (1986)
+    ...
+    Movie Alien : Covenant (2017)
+----
+
+
+== Exercice 7
+
+Créez une fonction **multiplyListBy** prenant en paramètre un tableau **anArray** et un nombre **value**.
+
+Cette fonction doit retourner un nouveau tableau ou chaque élement du tableau **anArray** est multplié par **value**.
+
+Pour tester votre fonction **multiplyListBy**, utilisez le code suivant :
+
+[source,javascript]
+----
+var numbers = [4,0,42,16,27,6];
+
+var multiplyNumbers = multiplyListBy(numbers,2);
+
+console.log(numbers) // affiche [4,0,42,16,27,6]
+console.log(multiplyNumbers) // affiche [8,0,84,32,54,12]
+----
+
+Notez, que l'affichage de numbers et de multiplyNumbers doit être différent
+

@@ -1,0 +1,10 @@
+
+= TODO : 
+
+- boucle **for in** et object
+- boucles imbriquées
+- fonctions anonymes
+- Array.map, Array.reduce, Array.forEach
+- Déclaration String ``et '' (template + \n)
+- *= et /= 
+- 

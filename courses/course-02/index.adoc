@@ -91,11 +91,95 @@ function createObject(aName){
 
 ----
 
+== Jouer avec les variables
+
+=== Changer la valeur d'une variable
+
+[source,javascript]
+----
+
+var a = 1;
+var b = 2;
+console.log(a);
+// affiche 1
+
+a = b;
+console.log(a);
+// affiche 2
+
+----
+
+=== Augmenter la valeur d'une variable
+
+[source,javascript]
+----
+
+var a = 0;
+console.log(a); // affiche 0
+
+a = a + 1;
+console.log(a); // affiche 1
+
+a = a + 5;
+console.log(a); // affiche 6
+
+----
+
+=== Reduire la valeur d'une variable
+
+[source,javascript]
+----
+
+var a = 10;
+console.log(a); // affiche 10
+
+a = a - 1;
+console.log(a); // affiche 9
+
+a = a - 5;
+console.log(a); // affiche 4
+
+----
+
+=== Raccourci pour ajouter 1 à une valeur
+
+[source,javascript]
+----
+
+var a = 0;
+console.log(a); // affiche 0
+
+a = a++;
+console.log(a); // affiche 1
+
+a = a++;
+console.log(a); // affiche 2
+
+----
+
+=== Raccourci pour enlever 1 à une valeur
+
+[source,javascript]
+----
+
+var a = 0;
+console.log(a); // affiche 0
+
+a = a--;
+console.log(a); // affiche -1
+
+a = a--;
+console.log(a); // affiche -2
+
+----
+
+
 == Les tableaux
 
 - Un tableau est un objet permettant de contenir une liste de donnée.
 - A chaque donnée ajouté au tableau va être assigné un index. 
 - Le premier est 0. Et ça augmente de 1 pour chaque nouvel élément. 
+- En anglais, on appel ça un **Array**
 
 
 === Exemple
@@ -141,4 +225,160 @@ var second = fruits[1];
 // second vaut aussi "Banana"
 ----
 
+=== Ajouter un élement à un tableau
+
+[source,javascript]
+----
+
+var fruits = []; // Ceci est un tableau vide
+console.log(fruits); // affiche un tableau vide
+
+fruits.push("Apple"); // ajoute "Apple" au tableau
+
+console.log(fruits) // affiche ["Apple"]
+----
+
+=== Changer la valeur d'un element du tableau
+
+[source,javascript]
+----
+
+var fruits = ["Apple","Banana"];
+
+fruits[1] = "Ananas";
+
+console.log(fruits); // affiche ["Apple","Ananas"]
+
+----
+
 == Les boucles
+
+Une boucle est une instruction permettant de repeter un action une nombre de fois défini.
+
+=== La boucle While
+
+[source,javascript]
+----
+
+    while(<condition>){
+        // mettre ici des intructions à executer
+    }
+   
+----
+
+<condition> est une expression retournant un booléen (true ou false)
+
+La boucle "While" permet de repeter les instructions entre {} tant que la <condition> est vrai. 
+Si <condition> devient fausse, alors la suite du programme est exécuté normalement.
+
+=== Exemple de boucle While
+
+[source,javascript]
+----
+
+    var i = 0;
+    var c = 10;
+
+    // Tant que i est strictement inférieur à 10 alors on boucle
+    while(i < c){
+        // on affiche la valeur de i
+        console.log(i);
+
+        i++; // ajoute 1 à i
+        // équivaut à i = i+1;
+    }
+----
+
+Cette exemple affiche les nombres de 0 à 9 dans la console.
+
+
+=== Boucle infini
+
+Attention au boucle infini : si la condition de la boucle ne passe jamais à faux. 
+
+Nous nous trouvons dans le cas d'une boucle infini qui va geler votre programme. 
+Et ça c'est pas cool!
+
+=== Boucle For
+[source,javascript]
+----
+
+for(<initialisation>;<condition>;<final_expression>){
+    // mettre ici des intructions à executer
+}
+
+----
+
+- **<initialisation>** : code executer avant que la boucle commence
+- **<condition>** : expression booléenne vérifiant si l'on continue à boucler ou non
+- **<final_expression** : expression executé en fin d'itération de boucle
+
+=== Exemple de boucle For
+
+[source,javascript]
+----
+
+// Au depart i vaut 0.
+// On vérifie a chaque itération de boucle 
+// si i est strictement inférieur à 10.
+// À la fin de l'itération, on ajoute 1 à i
+for(var i = 0; i < 10; i++){
+    console.log(i);
+    // affiche i dans la console
+}
+
+----
+
+Ce code affiche les valeurs de 0 à 9 dans la console.
+
+Exactement comme pour l'exemple de la boucle **while**
+
+
+== Boucle et Tableau
+
+=== Boucle **while** et Tableau
+
+[source,javascript]
+----
+
+var persons = ["Léa","Florent","Bastien","Rebecca"];
+
+var i = 0;
+var size = persons.length;
+while(i < size){
+    console.log(persons[i]);
+}
+
+----
+
+Cette exemple va afficher la liste des personnes contenues dans le tableau **persons**
+
+=== Boucle **for** et Tableau
+
+[source,javascript]
+----
+
+var persons = ["Léa","Florent","Bastien","Rebecca"];
+
+for(var i=0, size = persons.length;i < size;i++){
+    console.log(persons[i]);
+}
+
+----
+
+Cette exemple va aussi afficher la liste des personnes contenues dans le tableau **persons**.
+
+Vous noterez ceci :
+
+[source,javascript]
+----
+var i=0, size = persons.length
+----
+
+La virgule permet de déclarer deux variables sur une seule et même ligne.
+
+== TP
+
+- Allez sur https://mrpierrot.github.io/js-course/
+
+
