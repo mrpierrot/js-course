@@ -7,7 +7,7 @@
 6 silly lifecycle js-beginners@1.0.0~prebuild: no script for prebuild, continuing
 7 info lifecycle js-beginners@1.0.0~build: js-beginners@1.0.0
 8 verbose lifecycle js-beginners@1.0.0~build: unsafe-perm in lifecycle true
-9 verbose lifecycle js-beginners@1.0.0~build: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/pierrot/projects/js-courses/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Android\ Studio.app/Contents/gradle/gradle-4.1/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Android\ Studio.app/Contents/gradle/gradle-4.1/bin
+9 verbose lifecycle js-beginners@1.0.0~build: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/pierrot/projects/js-courses/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Android\ Studio.app/Contents/gradle/gradle-4.1/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Applications/Android\ Studio.app/Contents/gradle/gradle-4.1/bin
 10 verbose lifecycle js-beginners@1.0.0~build: CWD: /Users/pierrot/projects/js-courses
 11 silly lifecycle js-beginners@1.0.0~build: Args: [ '-c', 'node ./main.js' ]
 12 silly lifecycle js-beginners@1.0.0~build: Returned: code: 1  signal: null

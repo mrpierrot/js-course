@@ -1,27 +1,32 @@
 var chokidar = require('chokidar');
 var asciidoctor = require('asciidoctor.js')();
+var path = require('path');
+var fs = require('fs');
 require('asciidoctor-reveal.js');
 
 // Convert the document 'presentation.adoc' using the reveal.js converter
 var attributes = {'revealjsdir': '../../reveal.js@'};
 var slidesOptions = {safe: 'safe', backend: 'revealjs', attributes: attributes};
+var pageOptions = {safe: 'safe',doctype:'article', backend: 'html5'};
 
-chokidar.watch('courses/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event, path) => {
+chokidar.watch('courses/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event, npath) => {
     switch(event){
         case 'add':
         case 'change':
-            asciidoctor.convertFile(path, slidesOptions);
-            console.log(`${path} converted`);
+            asciidoctor.convertFile(npath, slidesOptions);
+            var nFileName = path.basename(npath, path.extname(npath)) + '.full.html';
+            var output = path.join(path.dirname(npath), nFileName);
+
+            asciidoctor.convertFile(npath, Object.assign({to_file:output},pageOptions));
+            console.log(`${npath} converted`);
     }
 });
 
-var pageOptions = {safe: 'safe',doctype:'article', backend: 'html5'};
-
-chokidar.watch('exercices/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event, path) => {
+chokidar.watch('exercices/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event, npath) => {
     switch(event){
         case 'add':
         case 'change':
-            asciidoctor.convertFile(path,pageOptions);
-            console.log(`${path} converted`);
+            asciidoctor.convertFile(npath,pageOptions);
+            console.log(`${npath} converted`);
     }
 });

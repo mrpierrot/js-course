@@ -1,0 +1,144 @@
+= Introduction à Javascript - Cours 2
+:source-highlighter: highlightjs
+
+== Ce que je n'ai pas précisé au premier cours
+
+=== !
+
+On peut assigner le contenu de variable à d'autres variables. On peut éffectuer des opérations entre variables
+
+[source,javascript]
+----
+ var a = 1;
+ var b = 3;
+ var c = a;
+ var d = a + b;
+ var e = "valeur de a = "+a;
+ console.log(a,b,c,d);
+ console.log(e);
+----
+
+=== !
+
+Le retour d'une fonction (return) peut-être le contenu d'une variable, d'un object
+
+[source,javascript]
+----
+
+function add(a,b){
+     var ret = a + b;
+     return a;
+ }
+
+ // équivaut à
+
+ function add(a,b){
+     return a + b;
+ }
+
+----
+
+
+=== !
+
+[source,javascript]
+----
+
+function createObject(){
+    return {
+         name:"Valentine"
+    };
+}
+
+// équivaut à 
+
+function createObject(){
+    var result = {
+        name:"Valentine"
+    }
+    return result;
+}
+
+----
+
+=== !
+
+On peut assigner à l'attribut d'un objet le contenu d'une variable
+
+[source,javascript]
+----
+
+var aName = "Florent";
+
+var person = {
+    name:aName
+}
+
+----
+
+=== !
+
+Ça marche aussi avec les fonctions
+
+[source,javascript]
+----
+
+function createObject(aName){
+    return {
+        name:aName
+    }
+}
+
+----
+
+== Les tableaux
+
+- Un tableau est un objet permettant de contenir une liste de donnée.
+- A chaque donnée ajouté au tableau va être assigné un index. 
+- Le premier est 0. Et ça augmente de 1 pour chaque nouvel élément. 
+
+
+=== Exemple
+
+|===
+| 0 | 1  | 2 | 3 | 4  
+
+| 21 
+| 42 
+| "Pouet" 
+| {title:"Plop"} 
+| true
+|===
+
+Un tableau peut contenir tout types de données
+
+=== Déclarer un tableau
+
+[source,javascript]
+----
+// création d'un tableau avec deux chaines de caractères "Apple" et "Banana"
+var fruits = ["Apple", "Banana"];
+
+// affichage du nombre d'élements contenu dans le tableau
+// ici : 2
+console.log(fruits.length);
+----
+
+=== Récupérer les elements d'un tableau
+
+[source,javascript]
+----
+// Assignation dans la variable *first* du premier élement du tableau 
+// ici : "Apple"
+var first = fruits[0];
+
+// Assignation dans la variable *last* du dernier élement du tableau
+// ici : "Banana"
+var last = fruits[fruits.length - 1];
+
+// équivaut ici à 
+var second = fruits[1];
+// second vaut aussi "Banana"
+----
+
+== Les boucles

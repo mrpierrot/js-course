@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Introduction à Javascript - Cours 2</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="../../reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="../../reveal.js/css/theme/black.css" id="theme"><link href="../../reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "../../reveal.js/css/print/pdf.css" : "../../reveal.js/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="../../reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Introduction à Javascript - Cours 2</h1></section><section><section id="ce_que_je_n_ai_pas_prcis_au_premier_cours"><h2>Ce que je n&#8217;ai pas précisé au premier cours</h2></section><section><div class="paragraph"><p>On peut assigner le contenu de variable à d&#8217;autres variables. On peut éffectuer des opérations entre variables</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript"> var a = 1;
+ var b = 3;
+ var c = a;
+ var d = a + b;
+ var e = "valeur de a = "+a;
+ console.log(a,b,c,d);
+ console.log(e);</code></pre></div></div></section><section><div class="paragraph"><p>Le retour d&#8217;une fonction (return) peut-être le contenu d&#8217;une variable, d&#8217;un object</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">function add(a,b){
+     var ret = a + b;
+     return a;
+ }
+
+ // équivaut à
+
+ function add(a,b){
+     return a + b;
+ }</code></pre></div></div></section><section><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">function createObject(){
+    return {
+         name:"Valentine"
+    };
+}
+
+// équivaut à
+
+function createObject(){
+    var result = {
+        name:"Valentine"
+    }
+    return result;
+}</code></pre></div></div></section><section><div class="paragraph"><p>On peut assigner à l&#8217;attribut d&#8217;un objet le contenu d&#8217;une variable</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">var aName = "Florent";
+
+var person = {
+    name:aName
+}</code></pre></div></div></section><section><div class="paragraph"><p>Ça marche aussi avec les fonctions</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">function createObject(aName){
+    return {
+        name:aName
+    }
+}</code></pre></div></div></section></section>
+<section><section id="les_tableaux"><h2>Les tableaux</h2><div class="ulist"><ul><li><p>Un tableau est un objet permettant de contenir une liste de donnée.</p></li><li><p>A chaque donnée ajouté au tableau va être assigné un index.</p></li><li><p>Le premier est 0. Et ça augmente de 1 pour chaque nouvel élément.</p></li></ul></div></section><section id="exemple"><h2>Exemple</h2><table class="tableblock frame-all grid-all" style="width:100%"><colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup><thead><tr><th class="tableblock halign-left valign-top">0</th><th class="tableblock halign-left valign-top">1</th><th class="tableblock halign-left valign-top">2</th><th class="tableblock halign-left valign-top">3</th><th class="tableblock halign-left valign-top">4</th></tr><tbody><tr><td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">"Pouet"</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">{title:"Plop"}</p></td><td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td></tr></table>
+<div class="paragraph"><p>Un tableau peut contenir tout types de données</p></div></section><section id="dclarer_un_tableau"><h2>Déclarer un tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">// création d'un tableau avec deux chaines de caractères "Apple" et "Banana"
+var fruits = ["Apple", "Banana"];
+
+// affichage du nombre d'élements contenu dans le tableau
+// ici : 2
+console.log(fruits.length);</code></pre></div></div></section><section id="rcuprer_les_elements_d_un_tableau"><h2>Récupérer les elements d&#8217;un tableau</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">// Assignation dans la variable *first* du premier élement du tableau
+// ici : "Apple"
+var first = fruits[0];
+
+// Assignation dans la variable *last* du dernier élement du tableau
+// ici : "Banana"
+var last = fruits[fruits.length - 1];
+
+// équivaut ici à
+var second = fruits[1];
+// second vaut aussi "Banana"</code></pre></div></div></section></section>
+<section id="les_boucles"><h2>Les boucles</h2></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: '../../reveal.js/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>
