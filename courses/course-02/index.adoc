@@ -27,7 +27,7 @@ Le retour d'une fonction (return) peut-être le contenu d'une variable, d'un obj
 
 function add(a,b){
      var ret = a + b;
-     return a;
+     return ret;
  }
 
  // équivaut à
