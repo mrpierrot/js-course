@@ -149,10 +149,10 @@ console.log(a); // affiche 4
 var a = 0;
 console.log(a); // affiche 0
 
-a = a++;
+a++;
 console.log(a); // affiche 1
 
-a = a++;
+a++;
 console.log(a); // affiche 2
 
 ----
@@ -165,10 +165,10 @@ console.log(a); // affiche 2
 var a = 0;
 console.log(a); // affiche 0
 
-a = a--;
+a--;
 console.log(a); // affiche -1
 
-a = a--;
+a--;
 console.log(a); // affiche -2
 
 ----
