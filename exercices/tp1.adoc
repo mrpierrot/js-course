@@ -74,9 +74,9 @@ Sous votre code, ajoutez celui-ci :
     
  var valentine = createPerson("Valentine","carottes");
 
- console.log(person.name); // affiche Valentine
- console.log(person.aime("carottes")); // affiche true
- console.log(person.mange("carottes")); // affiche Valentine mange des carottes
+ console.log(valentine.name); // affiche Valentine
+ console.log(valentine.aime("carottes")); // affiche true
+ console.log(valentine.mange("carottes")); // affiche Valentine mange des carottes
 
 ----
 
