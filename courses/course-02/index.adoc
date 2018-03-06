@@ -347,6 +347,7 @@ var i = 0;
 var size = persons.length;
 while(i < size){
     console.log(persons[i]);
+    i++;
 }
 
 ----
