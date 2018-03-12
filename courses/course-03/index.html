@@ -1,9 +1,96 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>TODO :</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="../../reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="../../reveal.js/css/theme/black.css" id="theme"><link href="../../reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Introduction à Javascript - Cours 3</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="../../reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="../../reveal.js/css/theme/black.css" id="theme"><link href="../../reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
 link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = window.location.search.match( /print-pdf/gi ) ? "../../reveal.js/css/print/pdf.css" : "../../reveal.js/css/print/paper.css";
-document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="../../reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>TODO :</h1></section><div class="ulist"><ul><li><p>boucle <strong>for in</strong> et object</p></li><li><p>boucles imbriquées</p></li><li><p>fonctions anonymes</p></li><li><p>Array.map, Array.reduce, Array.forEach</p></li><li><p>Déclaration String ``et '' (template + \n)</p></li><li><p>*= et /=
--</p></li></ul></div></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="../../reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title"><h1>Introduction à Javascript - Cours 3</h1></section><section><section id="operations_et"><h2>Operations += et -=</h2><div class="paragraph"><p>Exemple :</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var a = 5;
+
+    a += 8;
+    // équivaut à
+    a = a + 8;
+
+    a -= 2;
+    // équivaut à
+    a = a - 2;</code></pre></div></div></section><section id="concatnation_et"><h2>Concaténation et +=</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var a = "Ah";
+
+    a += "Ah";
+
+    console.log(a);
+    // affiche "AhAh"</code></pre></div></div></section></section>
+<section><section id="les_dictionnaires"><h2>Les dictionnaires</h2></section><section id="qu_est_ce_qu_un_dictionnaire"><h2>Qu&#8217;est ce qu&#8217;un dictionnaire?</h2><div class="paragraph"><p>Un dictionaire est une structure de données permettant de stocker un ensemble de valeurs à partir de clefs uniques.</p></div></section><section id="les_dictionnaires_en_js"><h2>Les dictionnaires en JS</h2><div class="paragraph"><p>On utilise tout simplement les objets.</p></div>
+<div class="paragraph"><p>Exemple :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var telephones = {
+        pompiers:18,
+        pierre:0607678987,
+        michel:0767564543
+    };
+
+    console.log( telephones.pompiers ); // affiche 18
+    // ou de façon équivalente
+    console.log( telephones["pompiers"] ); // affiche 18</code></pre></div></div>
+<div class="paragraph"><p>pompiers, pierre et michel sont des clefs et 18, 0607678987 et 0767564543 sont leur valeurs associées respectives</p></div></section><section id="ajouter_une_valeur_au_dictionaire"><h2>Ajouter une valeur au dictionaire.</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    // ajoute
+    telephones.police = 17;
+    // et ça marche aussi comme ça :
+    telephones["police"] = 17;</code></pre></div></div></section><section id="supprimer_une_valeur_du_dictionaire"><h2>Supprimer une valeur du dictionaire</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    // supprimer police du repertoire téléphonique
+    delete telephones.police;
+    // ou
+    delete telephones["police"];</code></pre></div></div></section><section id="prcision_sur_les_objets"><h2>Précision sur les objets</h2><div class="paragraph"><p>On a vu cette façon d&#8217;écrire une clef :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    telephones["police"];</code></pre></div></div>
+<div class="paragraph"><p>C&#8217;est ici une chaine de caractère. On peut donc faire des choses comme ceci :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    telephones["police de la mode"] = 3615;</code></pre></div></div>
+<div class="paragraph"><p>ou ça :</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    telephones["police" + " de la mode"] = 3615;</code></pre></div></div></section><section id="boucler_sur_un_dictionaire"><h2>Boucler sur un dictionaire</h2><div class="paragraph"><p>Il existe une boucle spécial pour le dictionnaire qui est <strong>for in</strong></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var telephones = {
+        pompiers:18,
+        pierre:0607678987,
+        michel:0767564543
+    };
+
+    for (var key in telephones){
+        // affiche la clef de l'élément courant
+        console.log(key);
+
+        // affiche la valeur de l'élément courant
+        console.log(telephones[key])
+    }</code></pre></div></div></section></section>
+<section><section id="jouons_avec_les_fonctions"><h2>Jouons avec les fonctions</h2></section><section id="la_fonction_anonyme"><h2>La fonction anonyme</h2><div class="paragraph"><p>Il existe une variante très utile pour déclarer une fonction.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var add = function(a,b){
+        return a + b;
+    }
+    // Ici on stock la fonction dite "anonyme"
+    // dans la variable add
+
+    // Appel de la fonction
+
+    var sum = add(1,3);
+    console.log(sum);</code></pre></div></div></section><section id="passer_une_fonction_en_paramtre__une_autre_fonction"><h2>Passer une fonction en paramètre à une autre fonction</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    // définition d'une fonction anonyme faisant une addition
+    var add = function(a,b){
+        return a + b;
+    }
+
+    function applyTwice(x,func){
+        return func(x,x);
+    }
+
+    console.log(applyTwice(2,add)); // affiche 4</code></pre></div></div></section><section id="variante_1"><h2>variante 1</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    function add(a,b){
+        return a + b;
+    }
+
+    function applyTwice(x,func){
+        return func(x,x);
+    }
+
+    console.log(applyTwice(2,add)); // affiche 4</code></pre></div></div></section><section id="variante_2"><h2>variante 2</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    function applyTwice(x,func){
+        return func(x,x);
+    }
+
+    console.log(
+        applyTwice(
+            2,
+            function(a,b){
+                return a + b;
+            }
+        )
+    ); // affiche 4</code></pre></div></div></section></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,
@@ -90,7 +177,7 @@ Reveal.initialize({
       { src: '../../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
       { src: '../../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
       { src: '../../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      
+      { src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
       { src: '../../reveal.js/plugin/zoom-js/zoom.js', async: true },
       { src: '../../reveal.js/plugin/notes/notes.js', async: true }
   ]

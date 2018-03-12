@@ -1,0 +1,138 @@
+= TP 3
+
+== Avant tout
+
+- Créez un nouveau Repl sur https://repl.it
+- nommez le "TP - cours 03"
+- Les exercices suivants devront être écrit dans ce Repl.
+- Ecrivez le code de vos exercices, en gardant bien ce que vous avez déjà écrit pour les exercices précédents.
+
+== Exercice 1
+
+Ecrivez une fonction **getKeys** qui renvoie sous forme d'un **array** les clefs d'un dictionnaire. 
+Vous Utiliserez une boucle **for in** pour ce faire.
+
+Pour tester votre fonction **getKeys**, utilisez le code suivant :
+
+[source,javascript]
+----
+
+var phones = {
+    "Philippe Candeloro": 0607080809,
+    "Calimero": 09,
+    "El Diablo": 6666666666,
+    "Univers": 42
+}
+
+
+var keys = getKeys(phones);
+
+console.log(keys);
+// affiche ["Philippe Candeloro","Calimero","El Diablo","Univers"]
+----
+
+== Exercice 2
+
+Ecrivez une fonction **getValues** qui renvoie sous forme d'un **array** les valeurs d'un dictionnaire.
+
+Pour tester votre fonction **getValues**, utilisez le code suivant :
+
+[source,javascript]
+----
+
+var phones = {
+    "Philippe Candeloro": 0607080809,
+    "Calimero": 09,
+    "El Diablo": 6666666666,
+    "Univers": 42
+}
+
+
+var values = getValues(phones);
+
+console.log(values);
+// affiche [0607080809,09,6666666666,42]
+----
+
+== Exercice 3
+
+Ecrivez une fonction **repeat** qui repete **n** fois un texte.
+
+Cette fonction a deux paramètres :
+
+- text : un message à afficher *n* fois
+- n : le nombre de fois ou **text** est repeté
+
+Et elle retourne un **string**
+
+Pour tester votre fonction **repeat**, utilisez le code suivant :
+
+[source,javascript]
+----
+var result = repeat("Ah",3);
+
+console.log(result);
+// affiche "AhAhAh"
+----
+
+=== Exercice 4
+
+Ecrivez une fonction **each** qui va executer une fonction à l'ensemble des élements d'un **array**
+
+Cette fonction a deux paramètres :
+
+- list : un **array*
+- callback : une fonction a appliquer à l'ensemble des elements de **list**
+
+
+Pour tester votre fonction **each**, utilisez le code suivant :
+
+[source,javascript]
+----
+var persons = ["Valentine","Eric","Yvelise","Alex"];
+
+function expressiveDisplay(text){
+    console.log(text+"!!!");
+}
+
+each(persons,expressiveDisplay);
+
+/*
+  devrait afficher :
+
+    Valentine!!!
+    Eric!!!
+    Yvelise!!!
+    Alex!!!
+*/
+----
+
+=== Exercice 5
+
+Ecrivez une fonction **map** qui va appliquer une fonction **callback** à l'ensemble des élements d'un **array**.
+Cette fonction retourne un nouveau tableau avec le résultat de la fonction **callback** appliquée à chaque élement du tableau.
+
+Cette fonction a deux paramètres :
+
+- list : un **array**
+- callback : une fonction a appliquer à l'ensemble des elements de **list**
+
+
+Pour tester votre fonction **map**, utilisez le code suivant :
+
+[source,javascript]
+----
+var numbers = [5,6,7,8];
+
+// fonction qui ajoute 1 à une valeur
+function increment(x){
+    return x +1;
+}
+
+var result = map(numbers,increment);
+
+console.log(numbers);
+// affiche [5,6,7,8]
+console.log(result);
+// afficher [6,7,8,9]
+----

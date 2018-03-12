@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>Introduction à Javascript - Cours 3</title>
+<title>TP 3</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -427,223 +427,197 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Introduction à Javascript - Cours 3</h1>
+<h1>TP 3</h1>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_operations_et">Operations += et -=</h2>
+<h2 id="_avant_tout">Avant tout</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Créez un nouveau Repl sur <a href="https://repl.it" class="bare">https://repl.it</a></p>
+</li>
+<li>
+<p>nommez le "TP - cours 03"</p>
+</li>
+<li>
+<p>Les exercices suivants devront être écrit dans ce Repl.</p>
+</li>
+<li>
+<p>Ecrivez le code de vos exercices, en gardant bien ce que vous avez déjà écrit pour les exercices précédents.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_1">Exercice 1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Exemple :</p>
+<p>Ecrivez une fonction <strong>getKeys</strong> qui renvoie sous forme d&#8217;un <strong>array</strong> les clefs d&#8217;un dictionnaire.
+Vous Utiliserez une boucle <strong>for in</strong> pour ce faire.</p>
+</div>
+<div class="paragraph">
+<p>Pour tester votre fonction <strong>getKeys</strong>, utilisez le code suivant :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    var a = 5;
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var phones = {
+    "Philippe Candeloro": 0607080809,
+    "Calimero": 09,
+    "El Diablo": 6666666666,
+    "Univers": 42
+}
 
-    a += 8;
-    // équivaut à
-    a = a + 8;
 
-    a -= 2;
-    // équivaut à
-    a = a - 2;</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_concaténation_et">Concaténation et +=</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    var a = "Ah";
+var keys = getKeys(phones);
 
-    a += "Ah";
-
-    console.log(a);
-    // affiche "AhAh"</code></pre>
-</div>
+console.log(keys);
+// affiche ["Philippe Candeloro","Calimero","El Diablo","Univers"]</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_dictionnaires">Les dictionnaires</h2>
+<h2 id="_exercice_2">Exercice 2</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_qu_est_ce_qu_un_dictionnaire">Qu&#8217;est ce qu&#8217;un dictionnaire?</h3>
 <div class="paragraph">
-<p>Un dictionaire est une structure de données permettant de stocker un ensemble de valeurs à partir de clefs uniques.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_les_dictionnaires_en_js">Les dictionnaires en JS</h3>
-<div class="paragraph">
-<p>On utilise tout simplement les objets.</p>
+<p>Ecrivez une fonction <strong>getValues</strong> qui renvoie sous forme d&#8217;un <strong>array</strong> les valeurs d&#8217;un dictionnaire.</p>
 </div>
 <div class="paragraph">
-<p>Exemple :</p>
+<p>Pour tester votre fonction <strong>getValues</strong>, utilisez le code suivant :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    var telephones = {
-        pompiers:18,
-        pierre:0607678987,
-        michel:0767564543
-    };
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var phones = {
+    "Philippe Candeloro": 0607080809,
+    "Calimero": 09,
+    "El Diablo": 6666666666,
+    "Univers": 42
+}
 
-    console.log( telephones.pompiers ); // affiche 18
-    // ou de façon équivalente
-    console.log( telephones["pompiers"] ); // affiche 18</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>pompiers, pierre et michel sont des clefs et 18, 0607678987 et 0767564543 sont leur valeurs associées respectives</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ajouter_une_valeur_au_dictionaire">Ajouter une valeur au dictionaire.</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    // ajoute
-    telephones.police = 17;
-    // et ça marche aussi comme ça :
-    telephones["police"] = 17;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_supprimer_une_valeur_du_dictionaire">Supprimer une valeur du dictionaire</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    // supprimer police du repertoire téléphonique
-    delete telephones.police;
-    // ou
-    delete telephones["police"];</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_précision_sur_les_objets">Précision sur les objets</h3>
-<div class="paragraph">
-<p>On a vu cette façon d&#8217;écrire une clef :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    telephones["police"];</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>C&#8217;est ici une chaine de caractère. On peut donc faire des choses comme ceci :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    telephones["police de la mode"] = 3615;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>ou ça :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    telephones["police" + " de la mode"] = 3615;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_boucler_sur_un_dictionaire">Boucler sur un dictionaire</h3>
-<div class="paragraph">
-<p>Il existe une boucle spécial pour le dictionnaire qui est <strong>for in</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    var telephones = {
-        pompiers:18,
-        pierre:0607678987,
-        michel:0767564543
-    };
 
-    for (var key in telephones){
-        // affiche la clef de l'élément courant
-        console.log(key);
+var values = getValues(phones);
 
-        // affiche la valeur de l'élément courant
-        console.log(telephones[key])
-    }</code></pre>
-</div>
+console.log(values);
+// affiche [0607080809,09,6666666666,42]</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_jouons_avec_les_fonctions">Jouons avec les fonctions</h2>
+<h2 id="_exercice_3">Exercice 3</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_la_fonction_anonyme">La fonction anonyme</h3>
 <div class="paragraph">
-<p>Il existe une variante très utile pour déclarer une fonction.</p>
+<p>Ecrivez une fonction <strong>repeat</strong> qui repete <strong>n</strong> fois un texte.</p>
+</div>
+<div class="paragraph">
+<p>Cette fonction a deux paramètres :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>text : un message à afficher <strong>n</strong> fois</p>
+</li>
+<li>
+<p>n : le nombre de fois ou <strong>text</strong> est repeté</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Et elle retourne un <strong>string</strong></p>
+</div>
+<div class="paragraph">
+<p>Pour tester votre fonction <strong>repeat</strong>, utilisez le code suivant :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    var add = function(a,b){
-        return a + b;
-    }
-    // Ici on stock la fonction dite "anonyme"
-    // dans la variable add
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var result = repeat("Ah",3);
 
-    // Appel de la fonction
+console.log(result);
+// affiche "AhAhAh"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercice_4">Exercice 4</h3>
+<div class="paragraph">
+<p>Ecrivez une fonction <strong>each</strong> qui va executer une fonction à l&#8217;ensemble des élements d&#8217;un <strong>array</strong></p>
+</div>
+<div class="paragraph">
+<p>Cette fonction a deux paramètres :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>list : un <strong>*array</strong></p>
+</li>
+<li>
+<p>callback : une fonction a appliquer à l&#8217;ensemble des elements de <strong>list</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pour tester votre fonction <strong>each</strong>, utilisez le code suivant :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var persons = ["Valentine","Eric","Yvelise","Alex"];
 
-    var sum = add(1,3);
-    console.log(sum);</code></pre>
+function expressiveDisplay(text){
+    console.log(text+"!!!");
+}
+
+each(persons,expressiveDisplay);
+
+/*
+  devrait afficher :
+
+    Valentine!!!
+    Eric!!!
+    Yvelise!!!
+    Alex!!!
+*/</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_passer_une_fonction_en_paramètre_à_une_autre_fonction">Passer une fonction en paramètre à une autre fonction</h3>
+<h3 id="_exercice_5">Exercice 5</h3>
+<div class="paragraph">
+<p>Ecrivez une fonction <strong>map</strong> qui va appliquer une fonction <strong>callback</strong> à l&#8217;ensemble des élements d&#8217;un <strong>array</strong>.
+Cette fonction retourne un nouveau tableau avec le résultat de la fonction <strong>callback</strong> appliquée à chaque élement du tableau.</p>
+</div>
+<div class="paragraph">
+<p>Cette fonction a deux paramètres :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>list : un <strong>array</strong></p>
+</li>
+<li>
+<p>callback : une fonction a appliquer à l&#8217;ensemble des elements de <strong>list</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pour tester votre fonction <strong>map</strong>, utilisez le code suivant :</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    // définition d'une fonction anonyme faisant une addition
-    var add = function(a,b){
-        return a + b;
-    }
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var numbers = [5,6,7,8];
 
-    function applyTwice(x,func){
-        return func(x,x);
-    }
+// fonction qui ajoute 1 à une valeur
+function increment(x){
+    return x +1;
+}
 
-    console.log(applyTwice(2,add)); // affiche 4</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_variante_1">variante 1</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    function add(a,b){
-        return a + b;
-    }
+var result = map(numbers,increment);
 
-    function applyTwice(x,func){
-        return func(x,x);
-    }
-
-    console.log(applyTwice(2,add)); // affiche 4</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_variante_2">variante 2</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    function applyTwice(x,func){
-        return func(x,x);
-    }
-
-    console.log(
-        applyTwice(
-            2,
-            function(a,b){
-                return a + b;
-            }
-        )
-    ); // affiche 4</code></pre>
+console.log(numbers);
+// affiche [5,6,7,8]
+console.log(result);
+// afficher [6,7,8,9]</code></pre>
 </div>
 </div>
 </div>
@@ -652,11 +626,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-03-12 17:04:51 CET
+Last updated 2018-03-12 17:18:12 CET
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>
