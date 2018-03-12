@@ -75,7 +75,7 @@ console.log(result);
 // affiche "AhAhAh"
 ----
 
-=== Exercice 4
+== Exercice 4
 
 Ecrivez une fonction **each** qui va executer une fonction à l'ensemble des élements d'un **array**
 
@@ -107,7 +107,7 @@ each(persons,expressiveDisplay);
 */
 ----
 
-=== Exercice 5
+== Exercice 5
 
 Ecrivez une fonction **map** qui va appliquer une fonction **callback** à l'ensemble des élements d'un **array**.
 Cette fonction retourne un nouveau tableau avec le résultat de la fonction **callback** appliquée à chaque élement du tableau.
