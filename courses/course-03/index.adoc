@@ -1,10 +1,212 @@
 
-= TODO : 
 
-- boucle **for in** et object
-- boucles imbriquées
-- fonctions anonymes
-- Array.map, Array.reduce, Array.forEach
-- Déclaration String ``et '' (template + \n)
-- *= et /= 
-- 
+
+
+
+= Introduction à Javascript - Cours 3
+:source-highlighter: highlightjs
+
+
+== Operations += et -=
+
+Exemple : 
+[source,javascript]
+----
+    var a = 5;
+
+    a += 8;
+    // équivaut à 
+    a = a + 8;
+
+    a -= 2;
+    // équivaut à 
+    a = a - 2;
+
+----
+
+=== Concaténation et +=
+
+[source,javascript]
+----
+
+    var a = "Ah";
+
+    a += "Ah";
+
+    console.log(a); 
+    // affiche "AhAh"
+
+----
+
+== Les dictionnaires
+
+=== Qu'est ce qu'un dictionnaire?
+
+Un dictionaire est une structure de données permettant de stocker un ensemble de valeurs à partir de clefs uniques. 
+
+=== Les dictionnaires en JS
+
+On utilise tout simplement les objets. 
+
+Exemple : 
+[source,javascript]
+----
+    var telephones = {
+        pompiers:18,
+        pierre:0607678987,
+        michel:0767564543
+    };
+
+    console.log( telephones.pompiers ); // affiche 18
+    // ou de façon équivalente
+    console.log( telephones["pompiers"] ); // affiche 18
+----
+
+pompiers, pierre et michel sont des clefs et 18, 0607678987 et 0767564543 sont leur valeurs associées respectives
+
+=== Ajouter une valeur au dictionaire.
+
+[source,javascript]
+----
+
+    // ajoute 
+    telephones.police = 17;
+    // et ça marche aussi comme ça :
+    telephones["police"] = 17;
+
+----
+
+=== Supprimer une valeur du dictionaire
+
+[source,javascript]
+----
+
+    // supprimer police du repertoire téléphonique 
+    delete telephones.police;
+    // ou 
+    delete telephones["police"];
+
+----
+
+=== Précision sur les objets
+
+On a vu cette façon d'écrire une clef : 
+[source,javascript]
+----
+    telephones["police"];
+----
+
+C'est ici une chaine de caractère. On peut donc faire des choses comme ceci : 
+
+[source,javascript]
+----
+    telephones["police de la mode"] = 3615;
+----
+
+ou ça :
+
+[source,javascript]
+----
+    telephones["police" + " de la mode"] = 3615;
+----
+
+
+=== Boucler sur un dictionaire
+
+Il existe une boucle spécial pour le dictionnaire qui est **for in** 
+
+[source,javascript]
+----
+
+    var telephones = {
+        pompiers:18,
+        pierre:0607678987,
+        michel:0767564543
+    };
+
+    for (var key in telephones){
+        // affiche la clef de l'élément courant
+        console.log(key); 
+
+        // affiche la valeur de l'élément courant
+        console.log(telephones[key]) 
+    }
+
+----
+
+== Jouons avec les fonctions
+
+
+=== La fonction anonyme
+
+Il existe une variante très utile pour déclarer une fonction.
+
+[source,javascript]
+----
+
+    var add = function(a,b){
+        return a + b;
+    }
+    // Ici on stock la fonction dite "anonyme" 
+    // dans la variable add
+
+    // Appel de la fonction
+
+    var sum = add(1,3);
+    console.log(sum);
+----
+
+=== Passer une fonction en paramètre à une autre fonction
+
+[source,javascript]
+----
+
+    // définition d'une fonction anonyme faisant une addition
+    var add = function(a,b){
+        return a + b;
+    }
+    
+    function applyTwice(x,func){
+        return func(x,x);
+    }
+
+    console.log(applyTwice(2,add)); // affiche 4
+
+----
+
+=== variante 1
+
+[source,javascript]
+----
+
+    function add(a,b){
+        return a + b;
+    }
+    
+    function applyTwice(x,func){
+        return func(x,x);
+    }
+
+    console.log(applyTwice(2,add)); // affiche 4
+
+----
+
+=== variante 2
+
+[source,javascript]
+----
+    
+    function applyTwice(x,func){
+        return func(x,x);
+    }
+
+    console.log(
+        applyTwice(
+            2,
+            function(a,b){
+                return a + b;
+            }
+        )
+    ); // affiche 4
+
+----
