@@ -18,10 +18,10 @@ Pour tester votre fonction **getKeys**, utilisez le code suivant :
 ----
 
 var phones = {
-    "Philippe Candeloro": 0607080809,
-    "Calimero": 09,
-    "El Diablo": 6666666666,
-    "Univers": 42
+    "Philippe Candeloro": "0607080809",
+    "Calimero": "09",
+    "El Diablo": "6666666666",
+    "Univers": "42"
 }
 
 
@@ -41,10 +41,10 @@ Pour tester votre fonction **getValues**, utilisez le code suivant :
 ----
 
 var phones = {
-    "Philippe Candeloro": 0607080809,
-    "Calimero": 09,
-    "El Diablo": 6666666666,
-    "Univers": 42
+    "Philippe Candeloro": "0607080809",
+    "Calimero": "09",
+    "El Diablo": "6666666666",
+    "Univers": "42"
 }
 
 
