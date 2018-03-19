@@ -1,0 +1,218 @@
+
+
+
+
+
+= Introduction à Javascript - Cours 4
+:source-highlighter: highlightjs
+
+== Le "Document Object Model" aka "DOM"
+
+Le Document Object Model (DOM) est une interface de programmation pour les documents HTML. 
+Il fournit une page dont des programmes peuvent modifier la structure, son style et son contenu. 
+Cette représentation du document permet de le voir comme un groupe structuré de nœuds et d'objets 
+possédant différents attributs et fonctions. 
+Fondamentalement, il permet de manipuler une page Web avec Javascript.
+
+== L'objets **document**
+
+Le point d'entré pour accéder au DOM est l'objet JS "document".
+
+Il posséde de nombreux attributs et fonctions. 
+
+Nous allons en étudier quelques-uns.
+
+[NOTE.speaker]
+--
+Plus d'infos sur : 
+
+- https://developer.mozilla.org/fr/docs/Web/API/Document
+- https://www.w3schools.com/jsref/dom_obj_document.asp
+--
+
+== document.querySelector()
+
+Cette fonctions permet d'accéder à un element de la page à l'aide d'un selecteur CSS.
+S'il y a plusieurs elements possible. La fonction va renvoyer le premier élement
+
+La définition
+[source,javascript]
+----
+    element = document.querySelector(string selecteur);
+----
+
+[NOTE.speaker]
+--
+Plus d'infos sur : https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector
+--
+
+=== Exemple
+
+Code HTML
+[source,HTML]
+----
+    <div>
+        <p>bar</p>
+        <p class="item">foo</p>
+    </div>
+----
+
+Code JS
+[source,javascript]
+----
+
+    // accède au premier élement de classe "item" de la page
+    var item = document.querySelector('.item');
+    console.log(item);
+    // affiche <p class="item">foo</p>
+
+    // accède au premier élement p de la page
+    var p = document.querySelector('p');
+    console.log(p);
+    // affiche <p>bar</p>
+
+----
+
+
+== document.querySelectorAll()
+
+Cette fonctions permet d'accéder à un ensemble d'élements de la page à l'aide d'un selecteur CSS.
+
+La définition
+[source,javascript]
+----
+    elements = document.querySelectorAll(string selecteur);
+----
+
+[NOTE.speaker]
+--
+Plus d'infos sur : https://developer.mozilla.org/fr/docs/Web/API/Document/querySelectorAll
+--
+
+=== Exemple
+
+Code HTML
+[source,HTML]
+----
+    <div>
+        <p>bar</p>
+        <p class="item">foo</p>
+    </div>
+----
+
+Code JS
+[source,javascript]
+----
+
+    // accède au premier élement p de la page
+    var pList = document.querySelectorAll('p');
+    for(var i=0,c=pList.length;i<c;i++){
+        console.log(pList[i]);
+    }
+    /* affiche 
+        <p>bar</p>
+        <p class="item">foo</p>
+    */
+----
+
+=== Attention
+
+**document.querySelectorAll()** ne retourne pas un **Array** d'elements, mais un **NodeList**.
+C'est presque la même chose, mais pas tout à fait. Pour l'instant celà ne devrait pas vous poser de soucis.
+
+[NOTE.speaker]
+--
+Plus d'infos sur : 
+
+- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array
+- https://developer.mozilla.org/fr/docs/Web/API/NodeList
+--
+
+== l'objet **Element**
+
+**querySelector()** et **querySelectorAll()** retournent un objet Element ou une liste d'objet Element.
+un **Element** est la présentation JS d'un element de la page. **document** est aussi un **Element**
+
+[NOTE.speaker]
+--
+Plus d'infos sur : https://developer.mozilla.org/fr/docs/Web/API/Element
+--
+
+=== Corrolaire
+
+On peut utiliser **querySelector()** et **querySelectorAll()** sur un **Element**.
+
+Comme ceci :
+
+Code HTML
+[source,HTML]
+----
+    <div class="bar">
+        <p class="item">foo</p>
+    </div>
+----
+
+Code JS
+[source,javascript]
+----
+
+   var bar = document.querySelector('.bar');
+   var item = bar.querySelector('.item');
+   // affiche <p class="item">foo</p>
+----
+
+
+== Manipuler le contenu d'un élement
+
+=== Recuperer le contenu d'un element sous forme de **string**
+
+On utilise l'attribut **innerHTML**
+
+[source,javascript]
+----
+    var content = element.innerHTML;
+----
+
+=== Exemple
+
+[source,HTML]
+----
+    <div class="foo">
+        Pouet
+        <b>plop</b>
+    </div>
+----
+
+[source,javascript]
+----
+
+   var foo = document.querySelector('.foo');
+   console.log(foo.innerHTML)
+    /* Affiche :
+        Pouet
+        <b>plop</b>
+    */
+----
+
+=== Modifier le contenu d'un element
+
+On peut modifier **element.innerHTML**,
+
+Comme ceci : 
+
+[source,javascript]
+----
+
+    var foo = document.querySelector('.foo');
+
+    // change le contenu de l'element 'foo'
+    foo.innerHTML = "Ahahaha";
+
+    console.log(foo);
+    // affiche <div class="foo">Ahahaha</div>
+----
+
+== Manipuler les classe d'un élement
+
+
+== Manipuler les styles d'un élement

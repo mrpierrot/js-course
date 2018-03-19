@@ -1,0 +1,102 @@
+= TP 4
+:source-highlighter: highlightjs
+
+== Avant tout
+
+- Créez un nouveau Repl **HTML, CSS, JS** sur https://repl.it
+- nommez le "TP4"
+- Les exercices suivants devront être écrit dans ce Repl.
+- Ecrivez le code de vos exercices, en gardant bien ce que vous avez déjà écrit pour les exercices précédents.
+
+Pour l'ensemble des exercices, vous utiliserez le code HTML suivant. A copier/coller dans le fichier **index.html** de votre **repl**
+
+[source,HTML]
+----
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TP4</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <article class="main-article">
+      <header>
+        <h1 class="article-title">Le top 5 des titres putaclic</h1>
+      </header>
+      <ul class="top5">
+        <li>L’histoire de ce Patrick vous redonnera foi en l’humanité</li>
+        <li>10 raisons pour lesquelles les Bretons sont ouf!</li>
+        <li>Comment faire un high-kick en 5 étapes faciles</li>
+        <li>10 choses qu’on ne vous dit pas sur les caribous</li>
+        <li>Les 10 chats les plus stupides du monde</li>
+      </ul>
+      <ul class="top10">
+      </ul>
+    </article>
+    <script src="index.js"></script>
+  </body>
+</html>
+----
+
+Pour l'ensemble des exercices, ce code ne devrait jamais être modifier à la main.
+
+
+== Exercice 1
+
+Afficher dans la console le text du titre de l'article de classe "article-title".
+
+Attention, celà doit afficher "Le top 5 des titres putaclic" et non "<h1 class="article-title">Le top 5 des titres putaclic</h1>" ou "HTMLHeadingElement {}"
+
+
+== Exercice 2
+Afficher dans la console le texte de chacun des élements *li* de l'élement *ul* de classe *top5*
+
+L'affichage doit se faire de la façon suivant : 
+
+<numéro de liste> : <titre>
+
+Et pour être plus exacte, vous devez avoir cette affichage en console : 
+
+----
+      1 : L’histoire de ce Patrick vous redonnera foi en l’humanité
+      2 : 10 raisons pour lesquelles les Bretons sont ouf!
+      3 : Comment faire un high-kick en 5 étapes faciles
+      4 : 10 choses qu’on ne vous dit pas sur les caribous
+      5 : Les 10 chats les plus stupides du monde
+----
+
+== Exercice 3
+
+Soit le tableau 
+
+[source,javascript]
+----
+var titles = [
+    'Faut-il interdire les frites ?',
+    'Les 10 tendances 2018 de la chipolata',
+    'Les 10 types de chats',
+    '10 questions à vous poser avant de vous cogner contre un mur',
+    '10 secrets pour marcher droit'
+]
+----
+
+Ecrivez un code qui prend chaque élement de la liste **titles** pour l'afficher sous forme d'element de liste HTML (**li**) 
+dans la liste HTML de classe **top10** déjà présent dans le code HTML fournit initialement.
+
+Vous devez obtenir l'affichage suivant : 
+
+[source,HTML]
+----
+<ul class="top10">
+    <li>Faut-il interdire les frites ?<li>
+    <li>Les 10 tendances 2018 de la chipolata<li>
+    <li>Les 10 types de chats<li>
+    <li>10 questions à vous poser avant de vous cogner contre un mur<li>
+    <li>10 secrets pour marcher droit<li>
+</ul>
+----
+
+Une fois fait, en utilisant Javascript, changer le titre de l'article par **"Le top 10 des titres putaclic"**
+
