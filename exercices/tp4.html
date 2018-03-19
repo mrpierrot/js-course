@@ -477,9 +477,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
       &lt;ul class="top10"&gt;
       &lt;/ul&gt;
     &lt;/article&gt;
+    &lt;footer&gt;
+        &lt;div&gt;
+            &lt;button type="button" class="js-toggle-colors-button"&gt;Changer les couleurs&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;button type="button" class="js-add-title-button"&gt;Ajouter un titre&lt;/button&gt;
+            &lt;input type="text" name="title" class="js-add-title-input" placeholder="Nouveau titre" value=""&gt;
+        &lt;/div&gt;
+        &lt;div&gt;Nombre de titres : &lt;span class="js-titles-count"&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;/footer&gt;
     &lt;script src="index.js"&gt;&lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ainsi que le code CSS suivant (à mettre dans index.css):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-CSS hljs" data-lang="CSS">    .red-color {
+        color: red;
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -564,10 +584,110 @@ dans la liste HTML de classe <strong>top10</strong> déjà présent dans le code
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_exercice_4">Exercice 4</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous aller écrire un code qui lors d&#8217;un click sur le bouton "Changer les couleurs" va changer la couleur de l&#8217;article
+en rouge. Si on re-clique d-sur le bouton, la couleur revient au noir.</p>
+</div>
+<div class="paragraph">
+<p>Pour celà, il faut :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Récupérer l&#8217;evenement <strong>"click"</strong> sur le bouton de classe <strong>js-toggle-colors-button</strong>.</p>
+</li>
+<li>
+<p>Récupérer l&#8217;element  de classe <strong>main-article</strong></p>
+</li>
+<li>
+<p>Utiliser la propriété <strong>className</strong></p>
+</li>
+<li>
+<p>Utiliser le style '.red-color' définit dans le fichier <strong>index.css</strong></p>
+</li>
+<li>
+<p>Faire en sorte qu&#8217;au click de souris, on alterne entre le rouge et le noir.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_5">Exercice 5</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ajouter des titres</p>
+</div>
+<div class="paragraph">
+<p>Dans le code HTML, vous noterez la présence de cette section :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTML hljs" data-lang="HTML">    &lt;div&gt;
+        &lt;button type="button" class="js-add-title-button"&gt;Ajouter un titre&lt;/button&gt;
+        &lt;input type="text" name="title" class="js-add-title-input" placeholder="Nouveau titre" value=""&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>C&#8217;est un bouton et un champ de saisi.
+Le but de l&#8217;exercice est de faire que quand :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>On saisi du texte dans le champ de saisi</p>
+</li>
+<li>
+<p>Puis on clique sur le bouton</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Celà ajoute le texte saisi à la suite de la liste de classe .top10.</p>
+</div>
+<div class="paragraph">
+<p>Pour information, pour récupéré la valeur d&#8217;un champ de saisi, celà se fait comme ceci :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">    var input = document.querySelector(".monChamp");
+    var value = input.value;
+    // C'est l'attribut 'value' qui est permet de récuperer la valeur saisie.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_6">Exercice 6</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous partirez de votre base de code de l&#8217;exercice 5.
+Quand un titre est ajouter, vous devez recupérer le nombre de titres putaclics dans la page et l&#8217;afficher en bas de page
+dans l&#8217;espace ci-dessous.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-HTML hljs" data-lang="HTML"> &lt;div&gt;Nombre de titres : &lt;span class="js-titles-count"&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Les titres putaclics sont tous contenu dans des **li**. Et tout les **li** de la page contiennent forcement des titres putaclics.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bonus : afficher le nombre de titres putaclics au chargement de la page.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-03-19 13:50:03 CET
+Last updated 2018-03-19 16:48:08 CET
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">

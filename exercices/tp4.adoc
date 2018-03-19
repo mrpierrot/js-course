@@ -35,13 +35,33 @@ Pour l'ensemble des exercices, vous utiliserez le code HTML suivant. A copier/co
       <ul class="top10">
       </ul>
     </article>
+    <footer>
+        <div>
+            <button type="button" class="js-toggle-colors-button">Changer les couleurs</button>
+        </div>
+        <div>
+            <button type="button" class="js-add-title-button">Ajouter un titre</button>
+            <input type="text" name="title" class="js-add-title-input" placeholder="Nouveau titre" value="">
+        </div>
+        <div>Nombre de titres : <span class="js-titles-count"></span></div>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
 ----
 
-Pour l'ensemble des exercices, ce code ne devrait jamais être modifier à la main.
+Ainsi que le code CSS suivant (à mettre dans index.css):
 
+[source,CSS]
+----
+
+    .red-color {
+        color: red;
+    }
+
+----
+
+Pour l'ensemble des exercices, ce code ne devrait jamais être modifier à la main.
 
 == Exercice 1
 
@@ -100,3 +120,65 @@ Vous devez obtenir l'affichage suivant :
 
 Une fois fait, en utilisant Javascript, changer le titre de l'article par **"Le top 10 des titres putaclic"**
 
+== Exercice 4
+
+Vous aller écrire un code qui lors d'un click sur le bouton "Changer les couleurs" va changer la couleur de l'article 
+en rouge. Si on re-clique d-sur le bouton, la couleur revient au noir.
+
+Pour celà, il faut :
+
+- Récupérer l'evenement **"click"** sur le bouton de classe **js-toggle-colors-button**.
+- Récupérer l'element  de classe **main-article**
+- Utiliser la propriété **className**
+- Utiliser le style '.red-color' définit dans le fichier **index.css**
+- Faire en sorte qu'au click de souris, on alterne entre le rouge et le noir.
+
+== Exercice 5
+
+Ajouter des titres
+
+Dans le code HTML, vous noterez la présence de cette section : 
+
+[source,HTML]
+----
+    <div>
+        <button type="button" class="js-add-title-button">Ajouter un titre</button>
+        <input type="text" name="title" class="js-add-title-input" placeholder="Nouveau titre" value="">
+    </div>
+----
+
+C'est un bouton et un champ de saisi. 
+Le but de l'exercice est de faire que quand :
+
+- On saisi du texte dans le champ de saisi
+- Puis on clique sur le bouton
+
+Celà ajoute le texte saisi à la suite de la liste de classe .top10.
+
+Pour information, pour récupéré la valeur d'un champ de saisi, celà se fait comme ceci : 
+
+[source,javascript]
+----
+
+    var input = document.querySelector(".monChamp");
+    var value = input.value;
+    // C'est l'attribut 'value' qui est permet de récuperer la valeur saisie.
+----
+
+== Exercice 6
+
+Vous partirez de votre base de code de l'exercice 5.
+Quand un titre est ajouter, vous devez recupérer le nombre de titres putaclics dans la page et l'afficher en bas de page
+dans l'espace ci-dessous.
+
+[source,HTML]
+----
+ <div>Nombre de titres : <span class="js-titles-count"></span></div>
+----
+
+[NOTE]
+----
+Les titres putaclics sont tous contenu dans des **li**. Et tout les **li** de la page contiennent forcement des titres putaclics.
+----
+
+Bonus : afficher le nombre de titres putaclics au chargement de la page.

@@ -20,12 +20,12 @@ S&#8217;il y a plusieurs elements possible. La fonction va renvoyer le premier �
     &lt;/div&gt;</code></pre></div></div>
 <div class="paragraph"><p>Code JS</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    // accède au premier élement de classe "item" de la page
-    var item = document.querySelector('.item');
+    var item = document.querySelector(".item");
     console.log(item);
     // affiche &lt;p class="item"&gt;foo&lt;/p&gt;
 
     // accède au premier élement p de la page
-    var p = document.querySelector('p');
+    var p = document.querySelector("p");
     console.log(p);
     // affiche &lt;p&gt;bar&lt;/p&gt;</code></pre></div></div></section></section>
 <section><section id="document_queryselectorall"><h2>document.querySelectorAll()</h2><div class="paragraph"><p>Cette fonctions permet d&#8217;accéder à un ensemble d&#8217;élements de la page à l&#8217;aide d&#8217;un selecteur CSS.</p></div><div class="paragraph"><p>La définition</p></div><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    elements = document.querySelectorAll(string selecteur);</code></pre></div></div><aside class="notes"><div class="paragraph"><p>Plus d&#8217;infos sur : <a href="https://developer.mozilla.org/fr/docs/Web/API/Document/querySelectorAll" class="bare">https://developer.mozilla.org/fr/docs/Web/API/Document/querySelectorAll</a></p></div></aside></section><section id="exemple_2"><h2>Exemple</h2><div class="paragraph"><p>Code HTML</p></div>
@@ -35,7 +35,7 @@ S&#8217;il y a plusieurs elements possible. La fonction va renvoyer le premier �
     &lt;/div&gt;</code></pre></div></div>
 <div class="paragraph"><p>Code JS</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    // accède au premier élement p de la page
-    var pList = document.querySelectorAll('p');
+    var pList = document.querySelectorAll("p");
     for(var i=0,c=pList.length;i&lt;c;i++){
         console.log(pList[i]);
     }
@@ -54,30 +54,58 @@ un <strong>Element</strong> est la présentation JS d&#8217;un element de la pag
         &lt;p class="item"&gt;foo&lt;/p&gt;
     &lt;/div&gt;</code></pre></div></div>
 <div class="paragraph"><p>Code JS</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">   var bar = document.querySelector('.bar');
-   var item = bar.querySelector('.item');
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">   var bar = document.querySelector(".bar");
+   var item = bar.querySelector(".item");
    // affiche &lt;p class="item"&gt;foo&lt;/p&gt;</code></pre></div></div></section></section>
 <section><section id="manipuler_le_contenu_d_un_lement"><h2>Manipuler le contenu d&#8217;un élement</h2></section><section id="recuperer_le_contenu_d_un_element_sous_forme_de_strong_string_strong"><h2>Recuperer le contenu d&#8217;un element sous forme de <strong>string</strong></h2><div class="paragraph"><p>On utilise l&#8217;attribut <strong>innerHTML</strong></p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var content = element.innerHTML;</code></pre></div></div></section><section id="exemple_3"><h2>Exemple</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="HTML language-HTML">    &lt;div class="foo"&gt;
         Pouet
         &lt;b&gt;plop&lt;/b&gt;
     &lt;/div&gt;</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">   var foo = document.querySelector('.foo');
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">   var foo = document.querySelector(".foo");
    console.log(foo.innerHTML)
     /* Affiche :
         Pouet
         &lt;b&gt;plop&lt;/b&gt;
     */</code></pre></div></div></section><section id="modifier_le_contenu_d_un_element"><h2>Modifier le contenu d&#8217;un element</h2><div class="paragraph"><p>On peut modifier <strong>element.innerHTML</strong>,</p></div>
 <div class="paragraph"><p>Comme ceci :</p></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var foo = document.querySelector('.foo');
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var foo = document.querySelector(".foo");
 
     // change le contenu de l'element 'foo'
     foo.innerHTML = "Ahahaha";
 
     console.log(foo);
     // affiche &lt;div class="foo"&gt;Ahahaha&lt;/div&gt;</code></pre></div></div></section></section>
-<section id="manipuler_les_classe_d_un_lement"><h2>Manipuler les classe d&#8217;un élement</h2></section>
-<section id="manipuler_les_styles_d_un_lement"><h2>Manipuler les styles d&#8217;un élement</h2></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+<section><section id="manipuler_les_classe_d_un_lement"><h2>Manipuler les classe d&#8217;un élement</h2></section><section id="element_classname"><h2>element.className</h2><div class="paragraph"><p><strong>element.className</strong> permet de recuperer ou de modifier les classe d&#8217;un element.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="HTML language-HTML">    &lt;div class="foo bar"&gt; Foo Bar &lt;/div&gt;</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var elem = document.querySelector(".foo");
+    console.log(elem.className);
+    // affiche "foo bar"
+
+    elem.className = "covfefe";
+    console.log(elem);
+    // affiche &lt;div class="covfefe"&gt; Foo Bar &lt;/div&gt;</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Plus d&#8217;infos sur : <a href="https://developer.mozilla.org/fr/docs/Web/API/Element/className" class="bare">https://developer.mozilla.org/fr/docs/Web/API/Element/className</a></p></div></aside></section><section id="element_classlist"><h2>element.classList</h2><div class="paragraph"><p>Il existe un autre attribut qui permet de gerer de façon plus simple les classes d&#8217;un element.</p></div>
+<div class="paragraph"><p>C&#8217;est <strong>element.classList</strong>.</p></div>
+<div class="paragraph"><p>Pour plus d&#8217;infos, voir : <a href="https://developer.mozilla.org/fr/docs/Web/API/Element/classList" class="bare">https://developer.mozilla.org/fr/docs/Web/API/Element/classList</a></p></div></section></section>
+<section id="manipuler_les_styles_d_un_lement"><h2>Manipuler les styles d&#8217;un élement</h2><div class="paragraph"><p>Il existe un attribut <strong>element.style</strong> qui est un object dans lequel on peut mettre des propriétés css.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="HTML language-HTML">    &lt;div class="foo"&gt; Foo Bar &lt;/div&gt;</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var elem = document.querySelector(".foo");
+    elem.style.color = "red";
+    elem.style.backgroundColor = "orange";
+    // l'element aura un texte en rouge sur fond orange</code></pre></div></div>
+<div class="paragraph"><p>On notera que la propriété css <strong>background-color</strong> est ici écrite en Camel Case (<strong>backgroundColor</strong>).
+Un style en JS doit toujours être écrit en Camel Case.</p></div>
+<aside class="notes"><div class="paragraph"><p>Plus d&#8217;infos sur : <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style" class="bare">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style</a></p></div></aside></section>
+<section><section id="les_vnements"><h2>Les évènements</h2><div class="paragraph"><p>Un évènement est un action externe auquel on peut faire réagir notre programme.</p></div><div class="paragraph"><p>Un exemple : Un clic de souris sur un bouton.</p></div></section><section id="comment_rcuperer_un_clic_de_souris"><h2>Comment récuperer un clic de souris.</h2><div class="paragraph"><p>Grâce à la fonction <strong>element.addEventListener()</strong>.</p></div>
+<div class="paragraph"><p>On lui passe deux paramères :</p></div>
+<div class="ulist"><ul><li><p>le nom l&#8217;évènement : "click"</p></li><li><p>Un fonction à executer quand l&#8217;évènement est déclenché.</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="javascript language-javascript">    var button = document.querySelector("#action-button");
+    button.addEventListener("click",function(event){
+        console.log("On a cliqué sur le bouton");
+    });</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Plus d&#8217;infos sur : <a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget" class="bare">https://developer.mozilla.org/fr/docs/Web/API/EventTarget</a></p></div></aside></section><section id="plus_d_vnements"><h2>Plus d&#8217;évènements?</h2><div class="paragraph"><p>La liste des évènements disponibles dans une page web: <a href="https://developer.mozilla.org/en-US/docs/Web/Events" class="bare">https://developer.mozilla.org/en-US/docs/Web/Events</a></p></div></section></section>
+<section id="tp4"><h2>TP4</h2></section></div></div><script src="../../reveal.js/lib/js/head.min.js"></script><script src="../../reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,

@@ -62,12 +62,12 @@ Code JS
 ----
 
     // accède au premier élement de classe "item" de la page
-    var item = document.querySelector('.item');
+    var item = document.querySelector(".item");
     console.log(item);
     // affiche <p class="item">foo</p>
 
     // accède au premier élement p de la page
-    var p = document.querySelector('p');
+    var p = document.querySelector("p");
     console.log(p);
     // affiche <p>bar</p>
 
@@ -105,7 +105,7 @@ Code JS
 ----
 
     // accède au premier élement p de la page
-    var pList = document.querySelectorAll('p');
+    var pList = document.querySelectorAll("p");
     for(var i=0,c=pList.length;i<c;i++){
         console.log(pList[i]);
     }
@@ -156,8 +156,8 @@ Code JS
 [source,javascript]
 ----
 
-   var bar = document.querySelector('.bar');
-   var item = bar.querySelector('.item');
+   var bar = document.querySelector(".bar");
+   var item = bar.querySelector(".item");
    // affiche <p class="item">foo</p>
 ----
 
@@ -186,7 +186,7 @@ On utilise l'attribut **innerHTML**
 [source,javascript]
 ----
 
-   var foo = document.querySelector('.foo');
+   var foo = document.querySelector(".foo");
    console.log(foo.innerHTML)
     /* Affiche :
         Pouet
@@ -203,7 +203,7 @@ Comme ceci :
 [source,javascript]
 ----
 
-    var foo = document.querySelector('.foo');
+    var foo = document.querySelector(".foo");
 
     // change le contenu de l'element 'foo'
     foo.innerHTML = "Ahahaha";
@@ -214,5 +214,96 @@ Comme ceci :
 
 == Manipuler les classe d'un élement
 
+=== element.className
+
+**element.className** permet de recuperer ou de modifier les classe d'un element.
+
+[source,HTML]
+----
+    <div class="foo bar"> Foo Bar </div>
+----
+
+[source,javascript]
+----
+    var elem = document.querySelector(".foo");
+    console.log(elem.className);
+    // affiche "foo bar"
+
+    elem.className = "covfefe";
+    console.log(elem);
+    // affiche <div class="covfefe"> Foo Bar </div>
+----
+
+[NOTE.speaker]
+--
+Plus d'infos sur : https://developer.mozilla.org/fr/docs/Web/API/Element/className
+--
+
+=== element.classList
+
+Il existe un autre attribut qui permet de gerer de façon plus simple les classes d'un element.
+
+C'est **element.classList**.
+
+Pour plus d'infos, voir : https://developer.mozilla.org/fr/docs/Web/API/Element/classList
 
 == Manipuler les styles d'un élement
+
+Il existe un attribut **element.style** qui est un object dans lequel on peut mettre des propriétés css.
+
+[source,HTML]
+----
+    <div class="foo"> Foo Bar </div>
+----
+
+[source,javascript]
+----
+    var elem = document.querySelector(".foo");
+    elem.style.color = "red";
+    elem.style.backgroundColor = "orange";
+    // l'element aura un texte en rouge sur fond orange
+----
+
+On notera que la propriété css **background-color** est ici écrite en Camel Case (**backgroundColor**).
+Un style en JS doit toujours être écrit en Camel Case.
+
+
+[NOTE.speaker]
+--
+Plus d'infos sur : https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+--
+
+== Les évènements 
+
+Un évènement est un action externe auquel on peut faire réagir notre programme. 
+
+Un exemple : Un clic de souris sur un bouton.
+
+=== Comment récuperer un clic de souris.
+
+Grâce à la fonction **element.addEventListener()**.
+
+On lui passe deux paramères :
+
+- le nom l'évènement : "click"
+- Un fonction à executer quand l'évènement est déclenché.
+
+[source,javascript]
+----
+    var button = document.querySelector("#action-button");
+    button.addEventListener("click",function(event){
+        console.log("On a cliqué sur le bouton");
+    });
+----
+
+[NOTE.speaker]
+--
+Plus d'infos sur : https://developer.mozilla.org/fr/docs/Web/API/EventTarget
+--
+
+=== Plus d'évènements?
+
+La liste des évènements disponibles dans une page web: https://developer.mozilla.org/en-US/docs/Web/Events
+
+== TP4
+
