@@ -1,0 +1,77 @@
+= TP5 - Le taquin
+
+Le but du TP va être de créer un jeu de taquin, ou du moins une partie du jeu de taquin.
+
+Je vous fourni une base HTML/CSS que vous pouvez modifier si besoin. 
+
+Il y a plein de façon de s'y prendre, avec des concepts que vous avez vu ou non. 
+Il est fort possible que vous ayez à chercher des informations sur internet. 
+Je vous conseille de faire vos recherches en anglais et de privilégiez le site https://developer.mozilla.org 
+
+Voici la liste des choses nécèssaires pour réaliser un taquin : 
+
+- avoir une grille d'images (fourni avec le HTML/CSS)
+- pouvoir échanger de place deux tuiles de la grille
+- Faire en sorte que les tuiles échangeables soit l'une à coté de l'autre horizontalement **OU** verticalement, mais pas les deux.
+- mélanger les tuiles de la grille au chargement de la page.
+- compter les coups et les afficher
+- vérifier que le joueur à remis les tuiles dans l'ordre et lui afficher un message.
+
+== Le code HTML et CSS
+
+[source,HTML]
+----
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TP4</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div class="taquin">
+        <span class="taquin-piece blank-piece" ></span>
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_02.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_03.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_04.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_05.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_06.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_07.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_08.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_09.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_10.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_11.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_12.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_13.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_14.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_15.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_16.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_17.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_18.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_19.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_20.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_21.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_22.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_23.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_24.png" />
+        <img class="taquin-piece" src="https://mrpierrot.github.io/js-course/exercices/images/poyo_25.png" />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
+----
+
+[source,CSS]
+----
+.taquin {
+    display: grid;
+    grid-template-columns: repeat(5, 0fr);
+    grid-gap: 5px;
+}
+
+.taquin-piece {
+    border: 0;
+}
+----
