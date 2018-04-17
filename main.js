@@ -22,7 +22,7 @@ chokidar.watch('courses/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event
     }
 });
 
-chokidar.watch('exercices/**/*.adoc', {ignored: /(^|[\/\\])\../}).on('all', (event, npath) => {
+chokidar.watch(['exercices/**/*.adoc','devoirs/**/*.adoc'], {ignored: /(^|[\/\\])\../}).on('all', (event, npath) => {
     switch(event){
         case 'add':
         case 'change':

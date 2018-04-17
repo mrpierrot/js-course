@@ -1,0 +1,160 @@
+
+= Devoir
+:source-highlighter: highlightjs
+
+Ce devoir est un à faire sur ordinateur.
+
+Créez un repl HTML/CSS/JS sur lequel vous aller travailler.
+A la fin du devoir, vous m'enverrez par mail à pierre@casusludi.com le contenu de **repl** sous forme de fichier zip (téléchargement disponible depuis votre repl).
+Renommez cette archive sous la form **nom-prenom.zip**. Vous m'enverrez aussi le lien de votre repl.
+Prevenez moi lorsque l'envois sera fait avant de partir. Je vérifierais que j'ai bien reçu les fichiers en les dezippant.
+
+Attention, c'est le fichier **nom-prenomm.zip** qui sera utilisé pour vous évaluer. Pas de fichier ou une archive corrompu et c'est zéro.
+
+Que la force soit avec vous.
+
+== Exercice 1
+
+Ecrivez une fonction qui affiche dans la console le contenu du document HTML. Executez cette fonction.
+
+== Exercice 2
+
+La formule de conversion de degrés Celsius en degrés Fahrenheit est la suivante : c/5 = (f-32)/9
+Avec c la valeur en Celsius et f la valeur en Fahrenheit.
+
+Soit c = (f-32) x 5/9
+et f = c x 5 / 9 + 32
+
+- Ecrivez une fonction qui retourne la conversion d'une valeur en Celsius en Fahrenheit.
+
+- Ecrivez une fonction qui retourne la conversion d'une valeur en Fahrenheit en Celsius.
+
+Puis à l'aide des ces deux fonctions, afficher dans la console :
+- la valeur calculée en Fahrenheit de 60 Celsius (= 140°F)
+- la valeur calculée en Celsius de 45 Fahrenheit (= 7.222°C)
+
+== Exercice 3
+
+Ecrivez une fonction avec deux nombres en paramètre. Si les nombres sont égaux, la fonction retourne la somme des deux. Si les nombres sont différents, la fonction retourne la différence entre le premier nombre et le second.
+
+Afficher dans la console, le resultat de la fonction avec pour paramètres 6 et 9, puis 42 et 33 et enfin 7 et 7.
+
+
+== Exercice 4
+
+Commencez par écrire les fonctions suivantes : 
+
+- la fonction **multiply** qui retourne la multiplication de ces deux paramètres
+- la fonction **divide** qui retourne la division de son premier paramètre par son second.
+
+Puis dans votre fichier index.html, vous copierez le code de ce formulaire HTML.
+
+[source,HTML]
+-----
+
+<form>
+<div class="form-line">
+    <label for="first-number">1er nombre :</label>    
+    <input type="text" id="first-number" class="first-number" />
+<div>
+<div class="form-line">
+  <label for="second-number">2nd nombre :</label>
+  <input type="text" id="second-number" class="second-number" />
+</div>
+<input type="button" class="multiply-button" Value="Multiplier" />
+<input type="button" class="divide-button" Value="Diviser" />
+</form>
+<p>Le resultat est  : <br>
+  <span class="result"></span>
+</p>
+-----
+
+Si l'utilisateur clique sur le bouton **Multiplier**, il doit s'afficher le resultat de la multiplication de la valeur des deux champs dans le span de class **result**. Vous utiliserez la fonction **multiply** pour cette opération.
+
+Si l'utilisateur clique sur le bouton **Diviser**, il doit s'afficher le resultat de la division de la valeur des deux champs. Vous utiliserez la fonction **divide** pour cette opération.
+
+Si l'un des champs est vide, ce champs doit être entouré d'un bord rouge de 2 pixels et la fonction **multiply** ou **divide** ne doit pas être executée. De plus dans le span de classe **result** vous devez écrire le texte "Un ou plusieurs champs sont vides".
+
+== Exercice 5
+
+Ecrivez une fonction **trianglePattern** avec en paramètre un nombre et une chaine de caractere. Cette fonction doit afficher dans la console
+
+L'appel de cette fonction avec en paramètre 5 et "*" doit afficher 
+
+-----
+*  
+* *  
+* * *  
+* * * *  
+* * * * *  
+-----
+
+== Exercice 6
+
+Ecrivez une fonction qui prend un tableau de nombres en paramètre et retourne la moyenne de ces nombres.
+
+A l'aide de cette fonction, calculez puis affichez la moyenne des nombres 5,12,18,11,16 et 42
+
+== Exercice 7
+
+Ecrivez une fonction qui prend en paramètre un tableau et un nombre **n**. La fonction doit retourner un nouveau tableau avec les **n** premiers éléments du tableau. Le tableau retourné ne doit pas avoir plus de valeurs que le tableau en paramètre.
+
+A l'aide de cette fonction, affichez dans la console les 3 premiers élements  du tableau [7,11,9,6,12,8,67,42]. Faites de même pour les 5 premiers élements et les 12 premiers elements. 
+
+== Exercice 8
+
+Soit le tableau suivant :
+
+[source,javascript]
+-----
+var library = [ 
+   {
+       title:  "Carbon modifié",
+       author: "Richard Morgan"
+   },
+   {
+       title: "Neverwhere",
+       author: "Neil Gaiman"
+   },
+   {
+       title: "The Stormlight Archive",
+       author: "Brandon Sanderson"
+   }];
+-----
+
+
+Ecrivez une fonction qui prend en parametre un tableau tel que ci-dessus et qui retourne un tableau contenant uniquement les auteurs.
+
+Affichez dans la console le résultat ( ["Richard Morgan",Neil Gaiman","Brandon Sanderson"] )
+
+== Exercice 9
+
+Soit le dictionnaire/objet suivant : 
+
+[source,javascript]
+----
+
+var bareme = {
+    "Exercice 1" : 1,
+    "Exercice 2" : 2,
+    "Exercice 3" : 2,
+    "Exercice 4" : 4,
+    "Exercice 5" : 2,
+    "Exercice 6" : 2,
+    "Exercice 7" : 3,
+    "Exercice 8" : 2,
+    "Exercice 9" : 2
+}
+----
+
+Ecrivez une fonction avec comme parametre un dictionnaire tel que ci-dessus et retournant la somme des valeurs.
+
+Affichez dans la console le resultat pour ce dictionnaire.
+
+
+
+
+
+
+
+
