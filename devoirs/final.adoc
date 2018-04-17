@@ -7,9 +7,9 @@ Ce devoir est un à faire sur ordinateur.
 Créez un repl HTML/CSS/JS sur lequel vous aller travailler.
 A la fin du devoir, vous m'enverrez par mail à pierre@casusludi.com le contenu de **repl** sous forme de fichier zip (téléchargement disponible depuis votre repl).
 Renommez cette archive sous la form **nom-prenom.zip**. Vous m'enverrez aussi le lien de votre repl.
-Prevenez moi lorsque l'envois sera fait avant de partir. Je vérifierais que j'ai bien reçu les fichiers en les dezippant.
+Avant de partir, prevenez moi lorsque l'envois sera fait. Je vérifierais que j'ai bien reçu les fichiers en les dezippant.
 
-Attention, c'est le fichier **nom-prenomm.zip** qui sera utilisé pour vous évaluer. Pas de fichier ou une archive corrompu et c'est zéro.
+Attention, c'est le fichier **nom-prenomm.zip** qui sera utilisé pour vous évaluer.
 
 Que la force soit avec vous.
 
