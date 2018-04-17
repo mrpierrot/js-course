@@ -30,6 +30,7 @@ et f = c x 9 / 5 + 32
 - Ecrivez une fonction qui retourne la conversion d'une valeur en Fahrenheit en Celsius.
 
 Puis à l'aide des ces deux fonctions, afficher dans la console :
+
 - la valeur calculée en Fahrenheit de 60 Celsius (= 140°F)
 - la valeur calculée en Celsius de 45 Fahrenheit (= 7.222°C)
 
