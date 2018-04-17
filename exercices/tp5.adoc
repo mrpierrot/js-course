@@ -17,13 +17,13 @@ Voici la liste des choses nécèssaires pour réaliser un taquin :
 - compter les coups et les afficher
 - vérifier que le joueur à remis les tuiles dans l'ordre et lui afficher un message.
 
-=== Tips
-==== A explorer 
+== Tips
+=== A explorer 
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Node
 - https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 
-==== Definir les position x et y à partir d'un index.
+=== Definir les position x et y à partir d'un index.
 
 -----
  var x = index % columns;
