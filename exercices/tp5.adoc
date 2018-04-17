@@ -11,11 +11,24 @@ Je vous conseille de faire vos recherches en anglais et de privilégiez le site 
 Voici la liste des choses nécèssaires pour réaliser un taquin : 
 
 - avoir une grille d'images (fourni avec le HTML/CSS)
-- pouvoir échanger de place deux tuiles de la grille
+- pouvoir échanger de place deux tuiles de la grille (dont la blanche)
 - Faire en sorte que les tuiles échangeables soit l'une à coté de l'autre horizontalement **OU** verticalement, mais pas les deux.
 - mélanger les tuiles de la grille au chargement de la page.
 - compter les coups et les afficher
 - vérifier que le joueur à remis les tuiles dans l'ordre et lui afficher un message.
+
+=== Tips
+==== A explorer 
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Node
+- https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+
+==== Definir les position x et y à partir d'un index.
+
+-----
+ var x = index % columns;
+ var y = parseInt(index / columns);
+-----
 
 == Le code HTML et CSS
 

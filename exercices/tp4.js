@@ -55,3 +55,5 @@ addTitleButton.addEventListener("click", function(event) {
 
 console.log("Exercice 6 -------------");
 titlesCountElem.innerHTML = document.querySelectorAll("li").length;
+
+
