@@ -23,7 +23,7 @@ La formule de conversion de degrés Celsius en degrés Fahrenheit est la suivant
 Avec c la valeur en Celsius et f la valeur en Fahrenheit.
 
 Soit c = (f-32) x 5/9
-et f = c x 5 / 9 + 32
+et f = c x 9 / 5 + 32
 
 - Ecrivez une fonction qui retourne la conversion d'une valeur en Celsius en Fahrenheit.
 
